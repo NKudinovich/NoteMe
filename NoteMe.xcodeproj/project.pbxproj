@@ -15,6 +15,7 @@
 		FBACC9AE2AE834E000AD25F5 /* UIFont+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9AD2AE834E000AD25F5 /* UIFont+Consts.swift */; };
 		FBACC9B02AE8382A00AD25F5 /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9AF2AE8382A00AD25F5 /* UIImage+Consts.swift */; };
 		FBACC9B32AE83AF500AD25F5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FBACC9B22AE83AF500AD25F5 /* SnapKit */; };
+		FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FBACC9AB2AE82E7300AD25F5 /* UIColor+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Consts.swift"; sourceTree = "<group>"; };
 		FBACC9AD2AE834E000AD25F5 /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		FBACC9AF2AE8382A00AD25F5 /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
+		FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				FBACC9A82AE82D1600AD25F5 /* App */,
 				FBACC9A92AE82DB600AD25F5 /* Resources */,
+				FBACC9B42AE83D7700AD25F5 /* Modules */,
 				FBACC9A22AE8251000AD25F5 /* Info.plist */,
 				FBACC99F2AE8251000AD25F5 /* LaunchScreen.storyboard */,
 			);
@@ -71,8 +74,8 @@
 		FBACC9A82AE82D1600AD25F5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */,
 				FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */,
+				FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -94,6 +97,30 @@
 				FBACC9AF2AE8382A00AD25F5 /* UIImage+Consts.swift */,
 			);
 			path = Consts;
+			sourceTree = "<group>";
+		};
+		FBACC9B42AE83D7700AD25F5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FBACC9B52AE83DA900AD25F5 /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FBACC9B52AE83DA900AD25F5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FBACC9B62AE83DBF00AD25F5 /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FBACC9B62AE83DBF00AD25F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +201,7 @@
 			files = (
 				FBACC9B02AE8382A00AD25F5 /* UIImage+Consts.swift in Sources */,
 				FBACC9AE2AE834E000AD25F5 /* UIFont+Consts.swift in Sources */,
+				FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */,
 				FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */,
 				FBACC9AC2AE82E7300AD25F5 /* UIColor+Consts.swift in Sources */,
 				FBACC9972AE8250D00AD25F5 /* SceneDelegate.swift in Sources */,
