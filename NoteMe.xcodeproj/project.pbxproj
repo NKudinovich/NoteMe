@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB43CC1C2AF16EC30018DA6B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */; };
+		FB9B435F2AF15F4D0079C5D0 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B435E2AF15F4D0079C5D0 /* View+Layer.swift */; };
+		FB9B43622AF160310079C5D0 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B43612AF160310079C5D0 /* UIButton+Styles.swift */; };
 		FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */; };
 		FBACC9972AE8250D00AD25F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */; };
 		FBACC99E2AE8251000AD25F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBACC99D2AE8251000AD25F5 /* Assets.xcassets */; };
@@ -16,10 +19,12 @@
 		FBACC9B02AE8382A00AD25F5 /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9AF2AE8382A00AD25F5 /* UIImage+Consts.swift */; };
 		FBACC9B32AE83AF500AD25F5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FBACC9B22AE83AF500AD25F5 /* SnapKit */; };
 		FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */; };
-		FBF075672AF1022B00AE6194 /* UIButton+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF075662AF1022B00AE6194 /* UIButton+Consts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		FB9B435E2AF15F4D0079C5D0 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
+		FB9B43612AF160310079C5D0 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
 		FBACC9912AE8250D00AD25F5 /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +35,6 @@
 		FBACC9AD2AE834E000AD25F5 /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		FBACC9AF2AE8382A00AD25F5 /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		FBF075662AF1022B00AE6194 /* UIButton+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Consts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB43CC1A2AF16EA50018DA6B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		FB9B435D2AF15EC30079C5D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB9B435E2AF15F4D0079C5D0 /* View+Layer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB9B43602AF15FFE0079C5D0 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				FB9B43612AF160310079C5D0 /* UIButton+Styles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		FBACC9882AE8250D00AD25F5 = {
 			isa = PBXGroup;
 			children = (
@@ -65,10 +93,11 @@
 			isa = PBXGroup;
 			children = (
 				FBACC9A82AE82D1600AD25F5 /* App */,
-				FBACC9A92AE82DB600AD25F5 /* Resources */,
+				FB43CC1A2AF16EA50018DA6B /* Custom */,
 				FBACC9B42AE83D7700AD25F5 /* Modules */,
-				FBACC9A22AE8251000AD25F5 /* Info.plist */,
-				FBACC99F2AE8251000AD25F5 /* LaunchScreen.storyboard */,
+				FBACC9A92AE82DB600AD25F5 /* Resources */,
+				FB9B43602AF15FFE0079C5D0 /* Styles */,
+				FB9B435D2AF15EC30079C5D0 /* Utils */,
 			);
 			path = NoteMe;
 			sourceTree = "<group>";
@@ -78,6 +107,7 @@
 			children = (
 				FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */,
 				FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */,
+				FBACC9A22AE8251000AD25F5 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -85,6 +115,7 @@
 		FBACC9A92AE82DB600AD25F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FBACC99F2AE8251000AD25F5 /* LaunchScreen.storyboard */,
 				FBACC9AA2AE82E3A00AD25F5 /* Consts */,
 				FBACC99D2AE8251000AD25F5 /* Assets.xcassets */,
 			);
@@ -97,7 +128,6 @@
 				FBACC9AB2AE82E7300AD25F5 /* UIColor+Consts.swift */,
 				FBACC9AD2AE834E000AD25F5 /* UIFont+Consts.swift */,
 				FBACC9AF2AE8382A00AD25F5 /* UIImage+Consts.swift */,
-				FBF075662AF1022B00AE6194 /* UIButton+Consts.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -203,11 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBACC9B02AE8382A00AD25F5 /* UIImage+Consts.swift in Sources */,
+				FB43CC1C2AF16EC30018DA6B /* LineTextField.swift in Sources */,
 				FBACC9AE2AE834E000AD25F5 /* UIFont+Consts.swift in Sources */,
 				FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */,
-				FBF075672AF1022B00AE6194 /* UIButton+Consts.swift in Sources */,
+				FB9B43622AF160310079C5D0 /* UIButton+Styles.swift in Sources */,
 				FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */,
 				FBACC9AC2AE82E7300AD25F5 /* UIColor+Consts.swift in Sources */,
+				FB9B435F2AF15F4D0079C5D0 /* View+Layer.swift in Sources */,
 				FBACC9972AE8250D00AD25F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +381,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A4S9XWQ2HC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NoteMe/Info.plist;
+				INFOPLIST_FILE = NoteMe/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NOTEme;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -379,7 +411,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A4S9XWQ2HC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NoteMe/Info.plist;
+				INFOPLIST_FILE = NoteMe/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NOTEme;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
