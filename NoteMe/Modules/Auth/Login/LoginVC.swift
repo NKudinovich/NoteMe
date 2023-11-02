@@ -19,16 +19,13 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
+    private lazy var welcomeTitle: UILabel = .mainTitleLabel("Welcome Back!")
+    
     private lazy var loginButton: UIButton = .yellowRoundedButton("Login")
     private lazy var newAccountButton: UIButton = .underlineYellowButton("New Account")
     private lazy var forgotPasswordButton: UIButton = .underlineGrayButton("Forgot Password")
     
-    private lazy var infoView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.cornerRadius = 5.0
-        return view
-    }()
+    private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
@@ -59,6 +56,7 @@ final class LoginVC: UIViewController {
         contentView.addSubview(newAccountButton)
         contentView.addSubview(loginButton)
         contentView.addSubview(infoView)
+        contentView.addSubview(welcomeTitle)
         
         infoView.addSubview(forgotPasswordButton)
         infoView.addSubview(emailTextField)
@@ -110,6 +108,11 @@ final class LoginVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.top.equalTo(emailTextField.snp.bottom).inset(-16.0)
             make.bottom.equalTo(forgotPasswordButton.snp.top).inset(-20.0)
+        }
+        
+        welcomeTitle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(infoView.snp.top).inset(-8.0)
         }
     }
 }
