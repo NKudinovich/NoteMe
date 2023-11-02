@@ -20,4 +20,10 @@ extension UIView {
         
         return view
     }
+    
+    static func contentView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .appGray
+        return view
+    }
 }
