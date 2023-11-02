@@ -22,6 +22,7 @@
 		FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */; };
 		FBD2E17D2AF3A20500415B82 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E17C2AF3A20500415B82 /* UIView+Styles.swift */; };
 		FBD2E1802AF3AB8200415B82 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */; };
+		FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E1822AF3ECC600415B82 /* ResetVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		FBD2E17C2AF3A20500415B82 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
 		FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		FBD2E1822AF3ECC600415B82 /* ResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				FBACC9B62AE83DBF00AD25F5 /* Login */,
 				FBD2E17E2AF3AB3B00415B82 /* Register */,
+				FBD2E1812AF3ECAE00415B82 /* Reset */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -171,6 +174,14 @@
 				FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		FBD2E1812AF3ECAE00415B82 /* Reset */ = {
+			isa = PBXGroup;
+			children = (
+				FBD2E1822AF3ECC600415B82 /* ResetVC.swift */,
+			);
+			path = Reset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 				FBD2E17D2AF3A20500415B82 /* UIView+Styles.swift in Sources */,
 				FBACC9AE2AE834E000AD25F5 /* UIFont+Consts.swift in Sources */,
 				FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */,
+				FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */,
 				FB9B43622AF160310079C5D0 /* UIButton+Styles.swift in Sources */,
 				FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */,
 				FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */,

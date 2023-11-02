@@ -98,8 +98,8 @@ final class RegisterVC: UIViewController {
         
         haveAccButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
-            make.centerX.equalToSuperview()
             make.height.equalTo(20.0)
+            make.horizontalEdges.equalToSuperview().inset(20.0)
         }
         
         registerButton.snp.makeConstraints { make in

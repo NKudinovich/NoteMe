@@ -10,11 +10,7 @@ import SnapKit
 
 final class LoginVC: UIViewController {
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGray
-        return view
-    }()
+    private lazy var contentView: UIView = .contentView()
     
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
@@ -79,7 +75,7 @@ final class LoginVC: UIViewController {
         newAccountButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
             make.height.equalTo(20.0)
-            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(20.0)
         }
         
         loginButton.snp.makeConstraints { make in

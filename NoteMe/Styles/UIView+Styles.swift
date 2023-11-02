@@ -26,4 +26,10 @@ extension UIView {
         view.backgroundColor = .appGray
         return view
     }
+    
+    static func separator() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .appText
+        return view
+    }
 }

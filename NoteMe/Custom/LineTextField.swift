@@ -27,11 +27,7 @@ final class LineTextField: UIView {
         return textField
     }()
     
-    private lazy var separator: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appText
-        return view
-    }()
+    private lazy var separator: UIView = .separator()
     
     private lazy var errorLabel: UILabel = {
         let label = UILabel()
