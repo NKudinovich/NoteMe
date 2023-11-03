@@ -15,31 +15,31 @@ final class RegisterVC: UIViewController {
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var registerTitle: UILabel = .mainTitleLabel("Nice to meet you!")
+    private lazy var registerTitle: UILabel = .mainTitleLabel("register_title".localizable)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
 
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "E-mail"
-        textField.placeholder = "Enter E-mail"
+        textField.title = "email".localizable
+        textField.placeholder = "enter_email".localizable
         return textField
     }()
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "Password"
-        textField.placeholder = "Enter Password"
+        textField.title = "password".localizable
+        textField.placeholder = "enter_password".localizable
         return textField
     }()
     private lazy var repeatPasswordTextField: LineTextField = {
        let textField = LineTextField()
-        textField.title = "Repeat Password"
-        textField.placeholder = "Enter Password"
+        textField.title = "repeat_password".localizable
+        textField.placeholder = "enter_password".localizable
         return textField
     }()
     
-    private lazy var registerButton: UIButton = .yellowRoundedButton("Register")
-    private lazy var haveAccButton: UIButton = .underlineYellowButton("I have an Account")
+    private lazy var registerButton: UIButton = .yellowRoundedButton("register_btn".localizable)
+    private lazy var haveAccButton: UIButton = .underlineYellowButton("have_account_btn".localizable)
     
     override func viewDidLoad() {
         super.viewDidLoad()

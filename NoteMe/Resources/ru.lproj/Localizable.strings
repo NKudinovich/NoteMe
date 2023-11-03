@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  NoteMe
+
+  Created by Nikita Kudinovich on 3.11.23.
+  
+*/
+"welcome_title" = "С возвращением!";
+"register_title" = "Приятно познакомиться!";
+"reset_title" = "Сбросить Пароль";
+"email" = "Почта";
+"enter_email" = "Введите Почту";
+"password" = "Пароль";
+"enter_password" = "Введите Пароль";
+"repeat_password" = "Повторите Пароль";
+"forgot_password_btn" = "Забыл Пароль";
+"login_btn" = "Войти";
+"register_btn" = "Зарегистрироваться";
+"new_account_btn" = "Новый Аккаунт";
+"have_account_btn" = "У меня есть Аккаунт";
+"reset_btn" = "Сбросить";
+"cancel_btn" = "Отмена";
+"reset_info_text" = "Введите свой адрес электронной почты, и мы отправим ссылку для создания нового пароля.";

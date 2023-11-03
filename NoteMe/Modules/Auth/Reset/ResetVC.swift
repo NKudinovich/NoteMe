@@ -15,20 +15,20 @@ final class ResetVC: UIViewController {
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var resetPasswordTitle: UILabel = .mainTitleLabel("Reset Password")
+    private lazy var resetPasswordTitle: UILabel = .mainTitleLabel("reset_title".localizable)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var infoViewText: UILabel =
-        .infoViewText("Enter your email address and we will share a link to create a new password.")
+        .infoViewText("reset_info_text".localizable)
     
     private lazy var resetPasswordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "Enter E-mail"
+        textField.placeholder = "enter_email".localizable
         return textField
     }()
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("Reset")
+    private lazy var resetButton: UIButton = .yellowRoundedButton("reset_btn".localizable)
     private lazy var cancelButton: UIButton = .appCancelButton()
     
     override func viewDidLoad() {
