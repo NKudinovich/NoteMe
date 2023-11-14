@@ -8,6 +8,15 @@
 import UIKit
 import SnapKit
 
+protocol LoginViewModelProtocol {
+    var catchEmailError: ((String?) -> Void)? { get set }
+    var catchPasswordError: ((String?) -> Void)? { get set }
+    
+    func loginDidTap(email: String?, password: String?)
+    func newAccountDidTap()
+    func forgotPasswordDidTap(email: String?)
+}
+
 final class LoginVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView()
@@ -17,10 +26,15 @@ final class LoginVC: UIViewController {
     
     private lazy var welcomeTitle: UILabel = .mainTitleLabel("welcome_title".localizable)
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("login_btn".localizable)
-    private lazy var newAccountButton: UIButton = .underlineYellowButton("new_account_btn".localizable)
+    private lazy var loginButton: UIButton =
+        .yellowRoundedButton("login_btn".localizable)
+        .withAction(self, #selector(loginDidTap))
+    private lazy var newAccountButton: UIButton =
+        .underlineYellowButton("new_account_btn".localizable)
+        .withAction(self, #selector(newAccountDidTap))
     private lazy var forgotPasswordButton: UIButton =
         .underlineGrayButton("forgot_password_btn".localizable)
+        .withAction(self, #selector(forgotPasswordDidTap))
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
@@ -38,11 +52,34 @@ final class LoginVC: UIViewController {
         return textField
     }()
     
+    private var viewModel: LoginViewModelProtocol
+    
+    init(viewModel: LoginViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupConstraints()
+    }
+    
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.emailTextField.errorText = errorText
+        }
+        
+        viewModel.catchPasswordError = {
+            self.passwordTextField.errorText = $0
+        }
     }
     
     private func setupUI() {
@@ -111,5 +148,18 @@ final class LoginVC: UIViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalTo(infoView.snp.top).inset(-8.0)
         }
+    }
+    
+    @objc private func loginDidTap() {
+        viewModel.loginDidTap(email: emailTextField.text,
+                              password: passwordTextField.text)
+    }
+    
+    @objc private func newAccountDidTap() {
+        viewModel.newAccountDidTap()
+    }
+    
+    @objc private func forgotPasswordDidTap() {
+        viewModel.forgotPasswordDidTap(email: emailTextField.text)
     }
 }
