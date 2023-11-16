@@ -12,23 +12,24 @@ final class ResetVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView()
     
+    private lazy var logoContainer: UIView = UIView()
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var resetPasswordTitle: UILabel = .mainTitleLabel("reset_title".localizable)
+    private lazy var resetPasswordTitle: UILabel = .mainTitleLabel("resetVC_reset_title".localizable)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var infoViewText: UILabel =
-        .infoViewText("reset_info_text".localizable)
+        .infoViewText("resetVC_reset_info_text".localizable)
     
     private lazy var resetPasswordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "enter_email".localizable
+        textField.placeholder = "resetVC_enter_email".localizable
         return textField
     }()
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("reset_btn".localizable)
+    private lazy var resetButton: UIButton = .yellowRoundedButton("resetVC_reset_btn".localizable)
     private lazy var cancelButton: UIButton = .appCancelButton()
     
     override func viewDidLoad() {
@@ -41,12 +42,13 @@ final class ResetVC: UIViewController {
     private func setupUI() {
         view.backgroundColor = .appBlack
         view.addSubview(contentView)
+        view.addSubview(cancelButton)
+        view.addSubview(resetButton)
         
-        contentView.addSubview(logoImageView)
+        contentView.addSubview(logoContainer)
         contentView.addSubview(infoView)
         contentView.addSubview(resetPasswordTitle)
-        contentView.addSubview(cancelButton)
-        contentView.addSubview(resetButton)
+        logoContainer.addSubview(logoImageView)
         
         infoView.addSubview(infoViewText)
         infoView.addSubview(resetPasswordTextField)
@@ -59,9 +61,13 @@ final class ResetVC: UIViewController {
             make.bottom.equalTo(resetButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(resetPasswordTitle.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(72.0)
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         

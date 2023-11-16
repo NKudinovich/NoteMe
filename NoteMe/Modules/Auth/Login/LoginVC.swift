@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-protocol LoginViewModelProtocol {
+@objc protocol LoginViewModelProtocol: AnyObject {
     var catchEmailError: ((String?) -> Void)? { get set }
     var catchPasswordError: ((String?) -> Void)? { get set }
     
     func loginDidTap(email: String?, password: String?)
-    func newAccountDidTap()
+    @objc func newAccountDidTap()
     func forgotPasswordDidTap(email: String?)
 }
 
@@ -21,34 +21,35 @@ final class LoginVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView()
     
+    private lazy var logoContainer: UIView = UIView()
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var welcomeTitle: UILabel = .mainTitleLabel("welcome_title".localizable)
+    private lazy var welcomeTitleLabel: UILabel = .mainTitleLabel("loginVC_welcome_title".localizable)
     
     private lazy var loginButton: UIButton =
-        .yellowRoundedButton("login_btn".localizable)
+        .yellowRoundedButton("loginVC_login_btn".localizable)
         .withAction(self, #selector(loginDidTap))
     private lazy var newAccountButton: UIButton =
-        .underlineYellowButton("new_account_btn".localizable)
-        .withAction(self, #selector(newAccountDidTap))
+        .underlineYellowButton("loginVC_new_account_btn".localizable)
+        .withAction(viewModel, #selector(LoginViewModelProtocol.newAccountDidTap))
     private lazy var forgotPasswordButton: UIButton =
-        .underlineGrayButton("forgot_password_btn".localizable)
+        .underlineGrayButton("loginVC_forgot_password_btn".localizable)
         .withAction(self, #selector(forgotPasswordDidTap))
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email".localizable
-        textField.placeholder = "enter_email".localizable
+        textField.title = "loginVC_email".localizable
+        textField.placeholder = "loginVC_enter_email".localizable
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
        let textField = LineTextField()
-        textField.title = "password".localizable
-        textField.placeholder = "enter_password".localizable
+        textField.title = "loginVC_password".localizable
+        textField.placeholder = "loginVC_enter_password".localizable
         return textField
     }()
     
@@ -85,12 +86,14 @@ final class LoginVC: UIViewController {
     private func setupUI() {
         view.backgroundColor = .appBlack
         view.addSubview(contentView)
+        view.addSubview(newAccountButton)
+        view.addSubview(loginButton)
         
-        contentView.addSubview(logoImageView)
-        contentView.addSubview(newAccountButton)
-        contentView.addSubview(loginButton)
+        contentView.addSubview(logoContainer)
         contentView.addSubview(infoView)
-        contentView.addSubview(welcomeTitle)
+        contentView.addSubview(welcomeTitleLabel)
+        
+        logoContainer.addSubview(logoImageView)
         
         infoView.addSubview(forgotPasswordButton)
         infoView.addSubview(emailTextField)
@@ -104,9 +107,13 @@ final class LoginVC: UIViewController {
             make.bottom.equalTo(loginButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(welcomeTitleLabel.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         
@@ -144,7 +151,7 @@ final class LoginVC: UIViewController {
             make.bottom.equalTo(forgotPasswordButton.snp.top).inset(-20.0)
         }
         
-        welcomeTitle.snp.makeConstraints { make in
+        welcomeTitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(infoView.snp.top).inset(-8.0)
         }
@@ -154,11 +161,7 @@ final class LoginVC: UIViewController {
         viewModel.loginDidTap(email: emailTextField.text,
                               password: passwordTextField.text)
     }
-    
-    @objc private func newAccountDidTap() {
-        viewModel.newAccountDidTap()
-    }
-    
+        
     @objc private func forgotPasswordDidTap() {
         viewModel.forgotPasswordDidTap(email: emailTextField.text)
     }

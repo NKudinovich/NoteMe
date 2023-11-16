@@ -5,19 +5,32 @@
   Created by Nikita Kudinovich on 3.11.23.
   
 */
-"welcome_title" = "С возвращением!";
-"register_title" = "Приятно познакомиться!";
-"reset_title" = "Сбросить Пароль";
-"email" = "Почта";
-"enter_email" = "Введите Почту";
-"password" = "Пароль";
-"enter_password" = "Введите Пароль";
-"repeat_password" = "Повторите Пароль";
-"forgot_password_btn" = "Забыл Пароль";
-"login_btn" = "Войти";
-"register_btn" = "Зарегистрироваться";
-"new_account_btn" = "Новый Аккаунт";
-"have_account_btn" = "У меня есть Аккаунт";
-"reset_btn" = "Сбросить";
+
+//MARK: - LoginVC keys
+"loginVC_welcome_title" = "С возвращением!";
+"loginVC_login_btn" = "Войти";
+"loginVC_new_account_btn" = "Новый Аккаунт";
+"loginVC_forgot_password_btn" = "Забыл Пароль";
+"loginVC_email" = "Почта";
+"loginVC_enter_email" = "Введите Почту";
+"loginVC_password" = "Пароль";
+"loginVC_enter_password" = "Введите Пароль";
+
+//MARK: - RegisterVC keys
+"registerVC_register_title" = "Приятно познакомиться!";
+"registerVC_email" = "Почта";
+"registerVC_enter_email" = "Введите Почту";
+"registerVC_password" = "Пароль";
+"registerVC_enter_password" = "Введите Пароль";
+"registerVC_repeat_password" = "Повторите Пароль";
+"registerVC_register_btn" = "Зарегистрироваться";
+"registerVC_have_account_btn" = "У меня есть Аккаунт";
+
+//MARK: - ResetVC keys
+"resetVC_reset_title" = "Сбросить Пароль";
+"resetVC_reset_info_text" = "Введите свой адрес электронной почты, и мы отправим ссылку для создания нового пароля.";
+"resetVC_enter_email" = "Введите Почту";
+"resetVC_reset_btn" = "Сбросить";
+
+//Cancel button
 "cancel_btn" = "Отмена";
-"reset_info_text" = "Введите свой адрес электронной почты, и мы отправим ссылку для создания нового пароля.";
