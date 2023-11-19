@@ -51,7 +51,7 @@ final class LoginVM: LoginViewModelProtocol {
         let isEmailValid = inputValidator.validate(email: email)
         let isPasswordValid = inputValidator.validate(password: password)
         
-        catchEmailError?(isEmailValid ? nil : "Wrond e-mail")
+        catchEmailError?(isEmailValid ? nil : "Wrong e-mail")
         catchPasswordError?(isPasswordValid ? nil : "Non-valid password")
         
         return isEmailValid && isPasswordValid

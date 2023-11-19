@@ -8,6 +8,13 @@
 import UIKit
 import SnapKit
 
+@objc protocol ResetViewModelProtocol: AnyObject {
+    var catchEmailError: ((String?) -> Void)? { get set }
+    
+    func resetDidTap(email: String?)
+    @objc func cancelDidTap()
+}
+
 final class ResetVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView()
@@ -29,14 +36,35 @@ final class ResetVC: UIViewController {
         return textField
     }()
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("resetVC_reset_btn".localizable)
+    private lazy var resetButton: UIButton =
+        .yellowRoundedButton("resetVC_reset_btn".localizable)
+        .withAction(self, #selector(resetDidTap))
     private lazy var cancelButton: UIButton = .appCancelButton()
+    
+    private var viewModel: ResetViewModelProtocol
+    
+    init(viewModel: ResetViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupConstraints()
+    }
+    
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.resetPasswordTextField.errorText = errorText
+        }
     }
     
     private func setupUI() {
@@ -104,4 +132,10 @@ final class ResetVC: UIViewController {
         }
     }
     
+    @objc private func resetDidTap() {
+        viewModel.resetDidTap(email: resetPasswordTextField.text)
+    }
+    
+    @objc private func cancelDidTap(){
+    }
 }

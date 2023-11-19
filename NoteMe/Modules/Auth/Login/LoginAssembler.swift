@@ -12,7 +12,7 @@ final class LoginAssembler {
     
     static func make() -> UIViewController {
         let vm = LoginVM(authService: TESTAuthService(),
-        inputValidator: InputValidator())
+                         inputValidator: InputValidator())
         
         return LoginVC(viewModel: vm)
     }
@@ -23,7 +23,5 @@ private class TESTAuthService: LoginAuthServiceUseCase {
                password: String,
                completion: @escaping (Bool) -> Void) {
         completion(true)
-    }
-    
-    
+    } 
 }

@@ -30,6 +30,10 @@
 		FBC6FB7F2AFE97ED00796BC0 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6FB7E2AFE97ED00796BC0 /* LoginAssembler.swift */; };
 		FBC6FB832AFEA1BC00796BC0 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6FB822AFEA1BC00796BC0 /* InputValidator.swift */; };
 		FBC6FB862AFEA81300796BC0 /* InputValidator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC6FB852AFEA81300796BC0 /* InputValidator+Login.swift */; };
+		FBCCFFC12B0A235200A9B367 /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC02B0A235200A9B367 /* ResetVM.swift */; };
+		FBCCFFC42B0A267700A9B367 /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC32B0A267700A9B367 /* InputValidator+Reset.swift */; };
+		FBCCFFC62B0A27DB00A9B367 /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC52B0A27DB00A9B367 /* ResetAssembler.swift */; };
+		FBCCFFC92B0A2F5600A9B367 /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */; };
 		FBD2E17D2AF3A20500415B82 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E17C2AF3A20500415B82 /* UIView+Styles.swift */; };
 		FBD2E1802AF3AB8200415B82 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */; };
 		FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E1822AF3ECC600415B82 /* ResetVC.swift */; };
@@ -62,6 +66,10 @@
 		FBC6FB7E2AFE97ED00796BC0 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		FBC6FB822AFEA1BC00796BC0 /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 		FBC6FB852AFEA81300796BC0 /* InputValidator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Login.swift"; sourceTree = "<group>"; };
+		FBCCFFC02B0A235200A9B367 /* ResetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVM.swift; sourceTree = "<group>"; };
+		FBCCFFC32B0A267700A9B367 /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
+		FBCCFFC52B0A27DB00A9B367 /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
+		FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
 		FBD2E17C2AF3A20500415B82 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
 		FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		FBD2E1822AF3ECC600415B82 /* ResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVC.swift; sourceTree = "<group>"; };
@@ -230,9 +238,26 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		FBCCFFC22B0A266700A9B367 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				FBCCFFC32B0A267700A9B367 /* InputValidator+Reset.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		FBCCFFC72B0A2F3900A9B367 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		FBD2E17E2AF3AB3B00415B82 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				FBCCFFC72B0A2F3900A9B367 /* UseCases */,
 				FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */,
 				FB7775A22B03DB88004B3479 /* RegisterPresenter.swift */,
 				FB7775A42B03E11C004B3479 /* RegisterAssembler.swift */,
@@ -243,7 +268,10 @@
 		FBD2E1812AF3ECAE00415B82 /* Reset */ = {
 			isa = PBXGroup;
 			children = (
+				FBCCFFC22B0A266700A9B367 /* UseCases */,
 				FBD2E1822AF3ECC600415B82 /* ResetVC.swift */,
+				FBCCFFC02B0A235200A9B367 /* ResetVM.swift */,
+				FBCCFFC52B0A27DB00A9B367 /* ResetAssembler.swift */,
 			);
 			path = Reset;
 			sourceTree = "<group>";
@@ -335,12 +363,16 @@
 				FB7775A52B03E11C004B3479 /* RegisterAssembler.swift in Sources */,
 				FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */,
 				FBC6FB7F2AFE97ED00796BC0 /* LoginAssembler.swift in Sources */,
+				FBCCFFC42B0A267700A9B367 /* InputValidator+Reset.swift in Sources */,
 				FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */,
 				FB9B43622AF160310079C5D0 /* UIButton+Styles.swift in Sources */,
+				FBCCFFC92B0A2F5600A9B367 /* InputValidator+Register.swift in Sources */,
 				FBC6FB7B2AFE942C00796BC0 /* UIButton+Actions.swift in Sources */,
 				FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */,
 				FBBC90662AF53ABC00E17C96 /* String+Locale.swift in Sources */,
+				FBCCFFC62B0A27DB00A9B367 /* ResetAssembler.swift in Sources */,
 				FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */,
+				FBCCFFC12B0A235200A9B367 /* ResetVM.swift in Sources */,
 				FBC6FB832AFEA1BC00796BC0 /* InputValidator.swift in Sources */,
 				FB7775A82B03E529004B3479 /* KeyboardHelper.swift in Sources */,
 				FB7775A32B03DB88004B3479 /* RegisterPresenter.swift in Sources */,
