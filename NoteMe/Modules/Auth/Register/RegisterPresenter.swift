@@ -7,12 +7,24 @@
 
 import UIKit
 
+protocol RegisterCoordinatorProtocol: AnyObject {
+    func finish()
+}
+
 protocol RegisterPresenterDelegate: AnyObject {
     func setEmailError(error: String?)
     func setPasswordError(error: String?)
     func setRepeatPasswordError(error: String?)
     
     func keyboardFrameChanged(_ frame: CGRect)
+}
+
+protocol RegisterKeyboardHelperUseCase {
+    @discardableResult
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+      
+    @discardableResult
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
 protocol RegisterInputValidatorUseCase {
@@ -30,13 +42,17 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     weak var delegate: RegisterPresenterDelegate?
     
-    private let keyboardHelper: KeyboardHelper
+    private weak var coordinator: RegisterCoordinatorProtocol?
+    
+    private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     private let authService: RegisterAuthUseCase
     
-    init(keyboardHelper: KeyboardHelper,
+    init(coordinator: RegisterCoordinatorProtocol,
+         keyboardHelper: KeyboardHelper,
          inputValidator: RegisterInputValidatorUseCase,
          authService: RegisterAuthUseCase) {
+        self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
         self.inputValidator = inputValidator
         self.authService = authService
@@ -60,12 +76,15 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             twoPasswordIdentical(password: password, repeatPassword: repeatPassword),
             let email, let password
         else { return }
-        authService.register(email: email, password: password) { isSucces in
-            print(isSucces)
+        authService.register(email: email, password: password) { [weak coordinator]
+            isSucces in
+                print(isSucces)
+                coordinator?.finish()
         }
     }
     
     func haveAccountDidTap() {
+        coordinator?.finish()
     }
     
     private func checkValidation(email: String?, password: String?) -> Bool {

@@ -34,6 +34,11 @@
 		FBCCFFC42B0A267700A9B367 /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC32B0A267700A9B367 /* InputValidator+Reset.swift */; };
 		FBCCFFC62B0A27DB00A9B367 /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC52B0A27DB00A9B367 /* ResetAssembler.swift */; };
 		FBCCFFC92B0A2F5600A9B367 /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */; };
+		FBCCFFCB2B0D0DA200A9B367 /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFCA2B0D0DA200A9B367 /* KeyboardHelper+Register.swift */; };
+		FBCCFFCD2B0D124600A9B367 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFCC2B0D124600A9B367 /* AppCoordinator.swift */; };
+		FBCCFFD02B0D129C00A9B367 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFCF2B0D129C00A9B367 /* Coordinator.swift */; };
+		FBCCFFD32B0D1B6C00A9B367 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFD22B0D1B6C00A9B367 /* LoginCoordinator.swift */; };
+		FBCCFFD62B0D24BC00A9B367 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCCFFD52B0D24BC00A9B367 /* RegisterCoordinator.swift */; };
 		FBD2E17D2AF3A20500415B82 /* UIView+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E17C2AF3A20500415B82 /* UIView+Styles.swift */; };
 		FBD2E1802AF3AB8200415B82 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */; };
 		FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD2E1822AF3ECC600415B82 /* ResetVC.swift */; };
@@ -70,6 +75,11 @@
 		FBCCFFC32B0A267700A9B367 /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
 		FBCCFFC52B0A27DB00A9B367 /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
 		FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
+		FBCCFFCA2B0D0DA200A9B367 /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
+		FBCCFFCC2B0D124600A9B367 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FBCCFFCF2B0D129C00A9B367 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FBCCFFD22B0D1B6C00A9B367 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		FBCCFFD52B0D24BC00A9B367 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		FBD2E17C2AF3A20500415B82 /* UIView+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styles.swift"; sourceTree = "<group>"; };
 		FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		FBD2E1822AF3ECC600415B82 /* ResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVC.swift; sourceTree = "<group>"; };
@@ -156,9 +166,10 @@
 		FBACC9A82AE82D1600AD25F5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FBACC9A22AE8251000AD25F5 /* Info.plist */,
+				FBCCFFCC2B0D124600A9B367 /* AppCoordinator.swift */,
 				FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */,
 				FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */,
-				FBACC9A22AE8251000AD25F5 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -205,10 +216,10 @@
 		FBACC9B62AE83DBF00AD25F5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FBCCFFD12B0D1B5600A9B367 /* Coordinator */,
 				FBC6FB842AFEA7B500796BC0 /* UseCases */,
 				FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */,
 				FBC6FB7C2AFE978000796BC0 /* LoginVM.swift */,
-				FBC6FB7E2AFE97ED00796BC0 /* LoginAssembler.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 		FBC6FB802AFEA14D00796BC0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FBCCFFCE2B0D128F00A9B367 /* Coordinator */,
 				FB7775A62B03E50C004B3479 /* KeyboardHelper */,
 				FBC6FB812AFEA16100796BC0 /* InputValidator */,
 			);
@@ -250,17 +262,44 @@
 			isa = PBXGroup;
 			children = (
 				FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */,
+				FBCCFFCA2B0D0DA200A9B367 /* KeyboardHelper+Register.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		FBCCFFCE2B0D128F00A9B367 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FBCCFFCF2B0D129C00A9B367 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FBCCFFD12B0D1B5600A9B367 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FBCCFFD22B0D1B6C00A9B367 /* LoginCoordinator.swift */,
+				FBC6FB7E2AFE97ED00796BC0 /* LoginAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FBCCFFD42B0D24AF00A9B367 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FBCCFFD52B0D24BC00A9B367 /* RegisterCoordinator.swift */,
+				FB7775A42B03E11C004B3479 /* RegisterAssembler.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		FBD2E17E2AF3AB3B00415B82 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				FBCCFFD42B0D24AF00A9B367 /* Coordinator */,
 				FBCCFFC72B0A2F3900A9B367 /* UseCases */,
 				FBD2E17F2AF3AB8200415B82 /* RegisterVC.swift */,
 				FB7775A22B03DB88004B3479 /* RegisterPresenter.swift */,
-				FB7775A42B03E11C004B3479 /* RegisterAssembler.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -366,14 +405,19 @@
 				FBCCFFC42B0A267700A9B367 /* InputValidator+Reset.swift in Sources */,
 				FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */,
 				FB9B43622AF160310079C5D0 /* UIButton+Styles.swift in Sources */,
+				FBCCFFD32B0D1B6C00A9B367 /* LoginCoordinator.swift in Sources */,
 				FBCCFFC92B0A2F5600A9B367 /* InputValidator+Register.swift in Sources */,
 				FBC6FB7B2AFE942C00796BC0 /* UIButton+Actions.swift in Sources */,
 				FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */,
 				FBBC90662AF53ABC00E17C96 /* String+Locale.swift in Sources */,
 				FBCCFFC62B0A27DB00A9B367 /* ResetAssembler.swift in Sources */,
 				FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */,
+				FBCCFFD02B0D129C00A9B367 /* Coordinator.swift in Sources */,
+				FBCCFFCB2B0D0DA200A9B367 /* KeyboardHelper+Register.swift in Sources */,
 				FBCCFFC12B0A235200A9B367 /* ResetVM.swift in Sources */,
+				FBCCFFCD2B0D124600A9B367 /* AppCoordinator.swift in Sources */,
 				FBC6FB832AFEA1BC00796BC0 /* InputValidator.swift in Sources */,
+				FBCCFFD62B0D24BC00A9B367 /* RegisterCoordinator.swift in Sources */,
 				FB7775A82B03E529004B3479 /* KeyboardHelper.swift in Sources */,
 				FB7775A32B03DB88004B3479 /* RegisterPresenter.swift in Sources */,
 				FBACC9AC2AE82E7300AD25F5 /* UIColor+Consts.swift in Sources */,
