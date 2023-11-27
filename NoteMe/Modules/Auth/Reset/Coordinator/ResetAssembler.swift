@@ -10,8 +10,9 @@ import UIKit
 final class ResetAssembler {
     private init() {}
     
-    static func make() -> UIViewController {
-        let vm = ResetVM(inputValidator: InputValidator(),
+    static func make(coordinator: ResetCoordinatorProtocol) -> UIViewController {
+        let vm = ResetVM(coordinator: coordinator,
+                         inputValidator: InputValidator(),
                          authService: TESTAuthService())
         
         return ResetVC(viewModel: vm)

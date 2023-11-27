@@ -15,6 +15,8 @@
 "loginVC_enter_email" = "Enter E-mail";
 "loginVC_password" = "Password";
 "loginVC_enter_password" = "Enter Password";
+"loginVC_wrong_email" = "Wrong e-mail";
+"loginVC_nonvalid_password" = "Non-valid password";
 
 //MARK: - RegisterVC keys
 "registerVC_register_title" = "Nice to meet you!";
@@ -25,12 +27,16 @@
 "registerVC_repeat_password" = "Repeat Password";
 "registerVC_register_btn" = "Register";
 "registerVC_have_account_btn" = "I have an Account";
+"registerVC_wrong_email" = "Wrong e-mail";
+"registerVC_nonvalid_password" = "Non-valid password";
+"registerVC_password_missmatch" = "Passwords do not match";
 
 //MARK: - ResetVC keys
 "resetVC_reset_title" = "Reset Password";
 "resetVC_reset_info_text" = "Enter your email address and we will share a link to create a new password.";
 "resetVC_enter_email" = "Enter E-mail";
 "resetVC_reset_btn" = "Reset";
+"resetVC_wrong_email" = "Wrong e-mail";
 
 //Cancel button
 "cancel_btn" = "Cancel";

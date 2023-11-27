@@ -15,6 +15,8 @@
 "loginVC_enter_email" = "Введите Почту";
 "loginVC_password" = "Пароль";
 "loginVC_enter_password" = "Введите Пароль";
+"loginVC_wrong_email" = "Неправильный адрес электронной почты";
+"loginVC_nonvalid_password" = "Недействительный пароль";
 
 //MARK: - RegisterVC keys
 "registerVC_register_title" = "Приятно познакомиться!";
@@ -25,12 +27,16 @@
 "registerVC_repeat_password" = "Повторите Пароль";
 "registerVC_register_btn" = "Зарегистрироваться";
 "registerVC_have_account_btn" = "У меня есть Аккаунт";
+"registerVC_wrong_email" = "Неправильный адрес электронной почты";
+"registerVC_nonvalid_password" = "Недействительный пароль";
+"registerVC_password_missmatch" = "Пароли не совпадают";
 
 //MARK: - ResetVC keys
 "resetVC_reset_title" = "Сбросить Пароль";
 "resetVC_reset_info_text" = "Введите свой адрес электронной почты, и мы отправим ссылку для создания нового пароля.";
 "resetVC_enter_email" = "Введите Почту";
 "resetVC_reset_btn" = "Сбросить";
+"resetVC_wrong_email" = "Неправильный адрес электронной почты";
 
 //Cancel button
 "cancel_btn" = "Отмена";

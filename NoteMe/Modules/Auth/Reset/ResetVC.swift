@@ -39,7 +39,9 @@ final class ResetVC: UIViewController {
     private lazy var resetButton: UIButton =
         .yellowRoundedButton("resetVC_reset_btn".localizable)
         .withAction(self, #selector(resetDidTap))
-    private lazy var cancelButton: UIButton = .appCancelButton()
+    private lazy var cancelButton: UIButton =
+        .appCancelButton()
+        .withAction(viewModel, #selector(ResetViewModelProtocol.cancelDidTap))
     
     private var viewModel: ResetViewModelProtocol
     
@@ -134,8 +136,5 @@ final class ResetVC: UIViewController {
     
     @objc private func resetDidTap() {
         viewModel.resetDidTap(email: resetPasswordTextField.text)
-    }
-    
-    @objc private func cancelDidTap(){
     }
 }

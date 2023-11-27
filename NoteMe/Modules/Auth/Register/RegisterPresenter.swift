@@ -49,7 +49,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private let authService: RegisterAuthUseCase
     
     init(coordinator: RegisterCoordinatorProtocol,
-         keyboardHelper: KeyboardHelper,
+         keyboardHelper: RegisterKeyboardHelperUseCase,
          inputValidator: RegisterInputValidatorUseCase,
          authService: RegisterAuthUseCase) {
         self.coordinator = coordinator
@@ -91,8 +91,10 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         let isEmailValid = inputValidator.validate(email: email)
         let isPasswordValid = inputValidator.validate(password: password)
         
-        delegate?.setEmailError(error: isEmailValid ? nil : "Wrong e-mail")
-        delegate?.setPasswordError(error: isPasswordValid ? nil : "Wrong password")
+        delegate?.setEmailError(error: isEmailValid ?
+                                nil : "registerVC_wrong_email".localizable)
+        delegate?.setPasswordError(error: isPasswordValid ?
+                                nil : "registerVC_nonvalid_password".localizable)
         
         return isEmailValid && isPasswordValid
     }
@@ -102,7 +104,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             let password = password
             let repeatPassword = repeatPassword
         delegate?.setRepeatPasswordError(error: password == repeatPassword ?
-                                         nil : "Passwords are not the same")
+                                         nil : "registerVC_password_missmatch".localizable)
         return password == repeatPassword
     }
 }
