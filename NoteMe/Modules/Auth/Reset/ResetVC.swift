@@ -78,6 +78,7 @@ final class ResetVC: UIViewController {
         contentView.addSubview(logoContainer)
         contentView.addSubview(infoView)
         contentView.addSubview(resetPasswordTitle)
+        
         logoContainer.addSubview(logoImageView)
         
         infoView.addSubview(infoViewText)

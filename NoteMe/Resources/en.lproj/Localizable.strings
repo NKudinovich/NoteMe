@@ -38,5 +38,14 @@
 "resetVC_reset_btn" = "Reset";
 "resetVC_wrong_email" = "Wrong e-mail";
 
-//Cancel button
+//MARK: - OnboardFirstVC keys
+"onboardFirstVC_main_title" = "Welcome!";
+"onboardFirstVC_infoView_text" = "NoteMe is an application, which notify you about everything!";
+"onboardFirstVC_next_button" = "Next";
+
+//MARK: - OnboardSecondVC
+"onboardSecondVC_main_title" = "Different Types!";
+"onboardSecondVC_done_button" = "Done";
+
+//MARK: - Cancel Button
 "cancel_btn" = "Cancel";

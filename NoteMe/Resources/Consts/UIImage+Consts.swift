@@ -13,6 +13,7 @@ extension UIImage {
     enum General {
         
         static let logo: UIImage = .init(named: "logo")!
+        static let onboardingList: UIImage = .init(named: "onboardingList")!
         
     }
 }

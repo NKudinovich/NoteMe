@@ -38,5 +38,14 @@
 "resetVC_reset_btn" = "Сбросить";
 "resetVC_wrong_email" = "Неправильный адрес электронной почты";
 
-//Cancel button
+//MARK: - OnboardFirstVC keys
+"onboardFirstVC_main_title" = "Добро пожаловать!";
+"onboardFirstVC_infoView_text" = "NoteMe это приложение, которое уведомляет вас обо всем!";
+"onboardFirstVC_next_button" = "Далее";
+
+//MARK: - OnboardSecondVC
+"onboardSecondVC_main_title" = "Различные типы!";
+"onboardSecondVC_done_button" = "Готово";
+
+//MARK: - Cancel Button
 "cancel_btn" = "Отмена";

@@ -47,9 +47,12 @@ final class LoginVM: LoginViewModelProtocol {
             let email, let password
         else { return }
         authService.login(email: email, password: password) { [weak coordinator]
-            isSuccess in
-                print(isSuccess)
+         isSuccess in
+            print(isSuccess)
+            if isSuccess {
+                ParametersHelper.set(.authenticated, value: true)
                 coordinator?.finish()
+            }
         }
     }
     
