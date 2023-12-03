@@ -46,6 +46,9 @@
 //MARK: - OnboardSecondVC
 "onboardSecondVC_main_title" = "Different Types!";
 "onboardSecondVC_done_button" = "Done";
+"onboardSecondVC_list_calendar" = "Calendar";
+"onboardSecondVC_list_location" = "Location";
+"onboardSecondVC_list_timer" = "Timer";
 
 //MARK: - Cancel Button
 "cancel_btn" = "Cancel";

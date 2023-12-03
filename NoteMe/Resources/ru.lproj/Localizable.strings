@@ -46,6 +46,9 @@
 //MARK: - OnboardSecondVC
 "onboardSecondVC_main_title" = "Различные типы!";
 "onboardSecondVC_done_button" = "Готово";
+"onboardSecondVC_list_calendar" = "Календарь";
+"onboardSecondVC_list_location" = "Точка";
+"onboardSecondVC_list_timer" = "Таймер";
 
 //MARK: - Cancel Button
 "cancel_btn" = "Отмена";

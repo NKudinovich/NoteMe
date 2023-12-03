@@ -89,12 +89,11 @@ final class OnboardFirstStepVC: UIViewController {
         infoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.height.equalTo(65.0)
         }
         
         infoTextLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalToSuperview().inset(8.0)
+            make.top.bottom.horizontalEdges.equalToSuperview().inset(16.0)
+            
         }
         
         nextButton.snp.makeConstraints { make in

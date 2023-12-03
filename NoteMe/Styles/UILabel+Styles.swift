@@ -30,4 +30,14 @@ extension UILabel {
         return label
     }
     
+    static func listOnboardLabel(_ text: String) -> UILabel {
+        let label = UILabel()
+        
+        label.font = .appFont.withSize(16.0)
+        label.textColor = .appText
+        label.text = text
+        
+        return label
+    }
+    
 }

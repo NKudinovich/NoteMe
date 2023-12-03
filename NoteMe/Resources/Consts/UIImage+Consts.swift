@@ -11,9 +11,10 @@ extension UIImage {
     
     //MARK: - General
     enum General {
-        
         static let logo: UIImage = .init(named: "logo")!
+    }
+    
+    enum Onboarding {
         static let onboardingList: UIImage = .init(named: "onboardingList")!
-        
     }
 }

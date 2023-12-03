@@ -26,7 +26,13 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var listContainer: UIView = UIView()
-    private lazy var listImageView: UIImageView = UIImageView(image: .General.onboardingList)
+    private lazy var listImageView: UIImageView = UIImageView(image: .Onboarding.onboardingList)
+    private lazy var listCalendarLabelText: UILabel =
+        .listOnboardLabel("onboardSecondVC_list_calendar".localizable)
+    private lazy var listLocationLabelText: UILabel =
+        .listOnboardLabel("onboardSecondVC_list_location".localizable)
+    private lazy var listTimerLabelText: UILabel =
+        .listOnboardLabel("onboardSecondVC_list_timer".localizable)
     
     private lazy var doneButton: UIButton =
         .yellowRoundedButton("onboardSecondVC_done_button".localizable)
@@ -70,6 +76,10 @@ final class OnboardSecondStepVC: UIViewController {
         
         logoContainer.addSubview(logoImageView)
         listContainer.addSubview(listImageView)
+        
+        listImageView.addSubview(listCalendarLabelText)
+        listImageView.addSubview(listLocationLabelText)
+        listImageView.addSubview(listTimerLabelText)
     }
     
     private func setupConstraints() {
@@ -109,6 +119,21 @@ final class OnboardSecondStepVC: UIViewController {
             make.center.equalToSuperview()
             make.height.equalTo(157.0)
             make.width.equalTo(180.0)
+        }
+        
+        listCalendarLabelText.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(22.0)
+            make.left.equalToSuperview().inset(30.0)
+        }
+        
+        listLocationLabelText.snp.makeConstraints { make in
+            make.top.equalTo(listCalendarLabelText.snp.bottom).inset(-16.0)
+            make.left.equalToSuperview().inset(30.0)
+        }
+        
+        listTimerLabelText.snp.makeConstraints { make in
+            make.top.equalTo(listLocationLabelText.snp.bottom).inset(-16.0)
+            make.left.equalToSuperview().inset(30.0)
         }
         
         doneButton.snp.makeConstraints { make in
