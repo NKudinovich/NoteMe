@@ -23,7 +23,8 @@ final class RegisterVC: UIViewController {
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var registerTitleLabel: UILabel = .mainTitleLabel("registerVC_register_title".localizable)
+    private lazy var registerTitleLabel: UILabel =
+        .mainTitleLabel("registerVC_register_title".localizable)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
 

@@ -9,6 +9,7 @@ import UIKit
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol RegisterPresenterDelegate: AnyObject {
@@ -78,8 +79,16 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         else { return }
         authService.register(email: email, password: password) { [weak coordinator]
             isSucces in
-                print(isSucces)
+            print(isSucces)
+            if isSucces {
                 coordinator?.finish()
+            } else {
+                //This alert show when email already used
+                let alertVC = AlertBuilder.build(title: "Error",
+                                                 message: "Some Error",
+                                                 okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
+            }
         }
     }
     

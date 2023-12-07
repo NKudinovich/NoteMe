@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol LoginInputValidatorUseCase {
@@ -43,15 +45,23 @@ final class LoginVM: LoginViewModelProtocol {
     
     func loginDidTap(email: String?, password: String?) {
         guard
-            checkValidation(email: email, password: password),
+            checkValidation(email: email),
             let email, let password
         else { return }
+        
         authService.login(email: email, password: password) { [weak coordinator]
          isSuccess in
             print(isSuccess)
             if isSuccess {
-                ParametersHelper.set(.authenticated, value: true)
-                coordinator?.finish()
+                
+                //FIXME: uncomment
+//                ParametersHelper.set(.authenticated, value: true)
+//                coordinator?.finish()
+            } else {
+                let alertVC = AlertBuilder.build(title: "loginVC_alert_error".localizable,
+                                                 message: "loginVC_alert_invalid".localizable,
+                                                 okTitle: "loginVC_alert_ok".localizable)
+                coordinator?.showAlert(alertVC)
             }
         }
     }
@@ -66,13 +76,10 @@ final class LoginVM: LoginViewModelProtocol {
         coordinator?.openResetModule()
     }
     
-    private func checkValidation(email: String?, password: String?) -> Bool {
+    private func checkValidation(email: String?) -> Bool {
         let isEmailValid = inputValidator.validate(email: email)
-        let isPasswordValid = inputValidator.validate(password: password)
-        
         catchEmailError?(isEmailValid ? nil : "loginVC_wrong_email".localizable)
-        catchPasswordError?(isPasswordValid ? nil : "loginVC_nonvalid_password".localizable)
         
-        return isEmailValid && isPasswordValid
+        return isEmailValid
     }
 }

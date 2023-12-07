@@ -9,6 +9,7 @@ import UIKit
 
 protocol ResetCoordinatorProtocol: AnyObject {
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol ResetInputValidatorUseCase {
@@ -43,7 +44,15 @@ final class ResetVM: ResetViewModelProtocol {
         else { return }
         authService.reset(email: email) { [weak coordinator] isSucces in
             print(isSucces)
-            coordinator?.finish()
+            if isSucces {
+                print("reset done")
+                coordinator?.finish()
+            } else {
+                let alertVC = AlertBuilder.build(title: "Error",
+                                                 message: "Some error",
+                                                 okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
+            }
         }
     }
     

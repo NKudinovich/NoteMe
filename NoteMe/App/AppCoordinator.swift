@@ -16,12 +16,16 @@ final class AppCoordinator: Coordinator {
     }
     
     func startApp() {
-        if ParametersHelper.get(.authenticated) {
-            //open onboarding or mainApp
-            openOnboardingModule()
-        } else {
-            openAuthModule()
-        }
+        //FIX: - TESTCODE
+        
+        openAuthModule()
+//        openOnboardingModule()
+//        if ParametersHelper.get(.authenticated) {
+//            //open onboarding or mainApp
+//            openOnboardingModule()
+//        } else {
+//            openAuthModule()
+//        }
     }
     
     private func openAuthModule() {

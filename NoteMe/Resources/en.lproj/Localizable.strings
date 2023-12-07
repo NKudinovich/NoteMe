@@ -17,6 +17,9 @@
 "loginVC_enter_password" = "Enter Password";
 "loginVC_wrong_email" = "Wrong e-mail";
 "loginVC_nonvalid_password" = "Non-valid password";
+"loginVC_alert_error" = "Error";
+"loginVC_alert_invalid" = "Invalid E-mail or Password";
+"loginVC_alert_ok" = "Ok";
 
 //MARK: - RegisterVC keys
 "registerVC_register_title" = "Nice to meet you!";

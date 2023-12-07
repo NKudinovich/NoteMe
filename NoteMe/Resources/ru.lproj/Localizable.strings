@@ -17,6 +17,9 @@
 "loginVC_enter_password" = "Введите Пароль";
 "loginVC_wrong_email" = "Неправильный адрес электронной почты";
 "loginVC_nonvalid_password" = "Недействительный пароль";
+"loginVC_alert_error" = "Ошибка";
+"loginVC_alert_invalid" = "Неправильная Почта или Пароль";
+"loginVC_alert_ok" = "Ок";
 
 //MARK: - RegisterVC keys
 "registerVC_register_title" = "Приятно познакомиться!";
@@ -47,7 +50,7 @@
 "onboardSecondVC_main_title" = "Различные типы!";
 "onboardSecondVC_done_button" = "Готово";
 "onboardSecondVC_list_calendar" = "Календарь";
-"onboardSecondVC_list_location" = "Точка";
+"onboardSecondVC_list_location" = "Локация";
 "onboardSecondVC_list_timer" = "Таймер";
 
 //MARK: - Cancel Button
