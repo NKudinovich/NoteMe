@@ -52,6 +52,9 @@
 "onboardSecondVC_list_calendar" = "Календарь";
 "onboardSecondVC_list_location" = "Локация";
 "onboardSecondVC_list_timer" = "Таймер";
-
+"onboardSecondVC_infoView_text_title" = "Вы можете использовать 3 типа уведомлений:";
+"onboardSecondVC_infoView_text_calendar" = "<b>· Календарь</b> - выберите дату, когда вы хотите получать уведомление.";
+"onboardSecondVC_infoView_text_location" = "<b>· Локация</b> - выберите местоположение, и уведомление придет после того, как вы войдете в его зону.";
+"onboardSecondVC_infoView_text_timer" = "<b>· Таймер</b> - установите таймер, и по истечении выбранного периода вы получите уведомление.";
 //MARK: - Cancel Button
 "cancel_btn" = "Отмена";

@@ -24,6 +24,14 @@ final class OnboardSecondStepVC: UIViewController {
         .mainTitleLabel("onboardSecondVC_main_title".localizable)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
+    private lazy var infoViewText: UILabel =
+        .infoViewText("onboardSecondVC_infoView_text_title".localizable)
+    private lazy var infoViewTextCalendar: UILabel =
+        .textWithHTML("onboardSecondVC_infoView_text_calendar".localizable)
+    private lazy var infoViewTextLocation: UILabel =
+        .textWithHTML("onboardSecondVC_infoView_text_location".localizable)
+    private lazy var infoViewTextTimer: UILabel =
+        .textWithHTML("onboardSecondVC_infoView_text_timer".localizable)
     
     private lazy var listContainer: UIView = UIView()
     private lazy var listImageView: UIImageView = UIImageView(image: .Onboarding.onboardingList)
@@ -80,6 +88,11 @@ final class OnboardSecondStepVC: UIViewController {
         listImageView.addSubview(listCalendarLabelText)
         listImageView.addSubview(listLocationLabelText)
         listImageView.addSubview(listTimerLabelText)
+        
+        infoView.addSubview(infoViewText)
+        infoView.addSubview(infoViewTextCalendar)
+        infoView.addSubview(infoViewTextLocation)
+        infoView.addSubview(infoViewTextTimer)
     }
     
     private func setupConstraints() {
@@ -107,7 +120,26 @@ final class OnboardSecondStepVC: UIViewController {
         infoView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
             make.centerY.equalToSuperview()
-            make.height.equalTo(140.0)
+            make.bottom.equalTo(infoViewTextTimer.snp.bottom).inset(-16.0)
+        }
+        
+        infoViewText.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview().inset(16.0)
+        }
+        
+        infoViewTextCalendar.snp.makeConstraints { make in
+            make.top.equalTo(infoViewText.snp.bottom)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
+        }
+        
+        infoViewTextLocation.snp.makeConstraints { make in
+            make.top.equalTo(infoViewTextCalendar.snp.bottom)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
+        }
+        
+        infoViewTextTimer.snp.makeConstraints { make in
+            make.top.equalTo(infoViewTextLocation.snp.bottom)
+            make.horizontalEdges.equalToSuperview().inset(16.0)
         }
         
         listContainer.snp.makeConstraints { make in

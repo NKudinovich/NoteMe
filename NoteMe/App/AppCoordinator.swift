@@ -18,8 +18,8 @@ final class AppCoordinator: Coordinator {
     func startApp() {
         //FIX: - TESTCODE
         
-        openAuthModule()
-//        openOnboardingModule()
+//        openAuthModule()
+        openOnboardingModule()
 //        if ParametersHelper.get(.authenticated) {
 //            //open onboarding or mainApp
 //            openOnboardingModule()

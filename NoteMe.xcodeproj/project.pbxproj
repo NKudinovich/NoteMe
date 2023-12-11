@@ -10,6 +10,7 @@
 		FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0CEE982AF2C51200AC4DA1 /* UILabel+Styles.swift */; };
 		FB43CC1C2AF16EC30018DA6B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */; };
 		FB627D042B1392E900F37995 /* ResetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB627D032B1392E900F37995 /* ResetCoordinator.swift */; };
+		FB769E3C2B273EA700565232 /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB769E3B2B273EA700565232 /* NSAttributedString+HTML.swift */; };
 		FB7775A32B03DB88004B3479 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7775A22B03DB88004B3479 /* RegisterPresenter.swift */; };
 		FB7775A52B03E11C004B3479 /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7775A42B03E11C004B3479 /* RegisterAssembler.swift */; };
 		FB7775A82B03E529004B3479 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7775A72B03E529004B3479 /* KeyboardHelper.swift */; };
@@ -71,6 +72,7 @@
 		FB0CEE982AF2C51200AC4DA1 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
 		FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		FB627D032B1392E900F37995 /* ResetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCoordinator.swift; sourceTree = "<group>"; };
+		FB769E3B2B273EA700565232 /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
 		FB7775A22B03DB88004B3479 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		FB7775A42B03E11C004B3479 /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
 		FB7775A72B03E529004B3479 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				FB9B435E2AF15F4D0079C5D0 /* View+Layer.swift */,
 				FBBC90652AF53ABC00E17C96 /* String+Locale.swift */,
 				FBC6FB7A2AFE942C00796BC0 /* UIButton+Actions.swift */,
+				FB769E3B2B273EA700565232 /* NSAttributedString+HTML.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				FB7775A32B03DB88004B3479 /* RegisterPresenter.swift in Sources */,
 				FBC54D052B165C2700BFB674 /* OnboardSecondStepVM.swift in Sources */,
 				FB9BF1832B1F9757000ADCBC /* AuthService+Login.swift in Sources */,
+				FB769E3C2B273EA700565232 /* NSAttributedString+HTML.swift in Sources */,
 				FBC54D032B165AC600BFB674 /* OnboardSecondStepVC.swift in Sources */,
 				FBACC9AC2AE82E7300AD25F5 /* UIColor+Consts.swift in Sources */,
 				FBD2E1802AF3AB8200415B82 /* RegisterVC.swift in Sources */,

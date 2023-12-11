@@ -52,6 +52,10 @@
 "onboardSecondVC_list_calendar" = "Calendar";
 "onboardSecondVC_list_location" = "Location";
 "onboardSecondVC_list_timer" = "Timer";
+"onboardSecondVC_infoView_text_title" = "You can use 3 types of notifications:";
+"onboardSecondVC_infoView_text_calendar" = "<b>· Calendar</b> - choose the date, when you want to receive notification.";
+"onboardSecondVC_infoView_text_location" = "<b>· Location</b> - choose the region and notification will come after you enter it.";
+"onboardSecondVC_infoView_text_timer" = "<b>· Timer</b> - set timer and after selected period you will receive the notification.";
 
 //MARK: - Cancel Button
 "cancel_btn" = "Cancel";

@@ -25,7 +25,7 @@ extension UILabel {
         label.font = .appFont.withSize(13.0)
         label.textColor = .appText
         label.text = text
-        label.numberOfLines = 0
+        label.numberOfLines = .zero
         
         return label
     }
@@ -40,4 +40,12 @@ extension UILabel {
         return label
     }
     
+    static func textWithHTML(_ text: String) -> UILabel {
+        let label = UILabel()
+        label.attributedText = .parse(html: text,
+                                      font: .appFont.withSize(13.0))
+        label.numberOfLines = .zero
+        
+        return label
+    }
 }
