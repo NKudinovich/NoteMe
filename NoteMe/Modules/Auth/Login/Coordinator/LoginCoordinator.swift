@@ -48,8 +48,4 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
         vc.modalTransitionStyle = .flipHorizontal
         rootVC?.present(vc, animated: true)
     }
-    
-    func showAlert(_ alert: UIAlertController) {
-        rootVC?.present(alert, animated: true)
-    }
 }

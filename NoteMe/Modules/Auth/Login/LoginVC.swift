@@ -12,12 +12,34 @@ import SnapKit
     var catchEmailError: ((String?) -> Void)? { get set }
     var catchPasswordError: ((String?) -> Void)? { get set }
     
+    var keyboardChangedFrame: ((CGRect) -> Void)? { get set }
+    
     func loginDidTap(email: String?, password: String?)
     @objc func newAccountDidTap()
     func forgotPasswordDidTap(email: String?)
 }
 
+protocol LoginKeyboardAnimatorUseCase {
+    func moveView(for targetView: UIView,
+                  frame: CGRect,
+                  padding: CGFloat)
+}
+
 final class LoginVC: UIViewController {
+    
+    //Keys with localization
+    private enum L10n {
+        static let welcomeTitleLable: String = "loginVC_welcome_title".localizable
+        static let loginButton: String = "loginVC_login_btn".localizable
+        static let newAccountButton: String = "loginVC_new_account_btn".localizable
+        static let forgotPasswordButton: String = "loginVC_forgot_password_btn".localizable
+        static let emailTextFieldTitle: String = "loginVC_email".localizable
+        static let emailTextFieldPlaceholder: String = "loginVC_enter_email".localizable
+        static let passwordTextFieldTitle: String = "loginVC_password".localizable
+        static let passwordTextFieldPlaceholder: String = "loginVC_enter_password".localizable
+    }
+    
+    private let keyboardAnimator: LoginKeyboardAnimatorUseCase
     
     private lazy var contentView: UIView = .contentView()
     
@@ -25,38 +47,41 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var welcomeTitleLabel: UILabel = .mainTitleLabel("loginVC_welcome_title".localizable)
+    private lazy var welcomeTitleLabel: UILabel = .mainTitleLabel(L10n.welcomeTitleLable)
     
     private lazy var loginButton: UIButton =
-        .yellowRoundedButton("loginVC_login_btn".localizable)
+        .yellowRoundedButton(L10n.loginButton)
         .withAction(self, #selector(loginDidTap))
     private lazy var newAccountButton: UIButton =
-        .underlineYellowButton("loginVC_new_account_btn".localizable)
+        .underlineYellowButton(L10n.newAccountButton)
         .withAction(viewModel, #selector(LoginViewModelProtocol.newAccountDidTap))
     private lazy var forgotPasswordButton: UIButton =
-        .underlineGrayButton("loginVC_forgot_password_btn".localizable)
+        .underlineGrayButton(L10n.forgotPasswordButton)
         .withAction(self, #selector(forgotPasswordDidTap))
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "loginVC_email".localizable
-        textField.placeholder = "loginVC_enter_email".localizable
+        textField.title = L10n.emailTextFieldTitle
+        textField.placeholder = L10n.emailTextFieldPlaceholder
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
        let textField = LineTextField()
-        textField.title = "loginVC_password".localizable
-        textField.placeholder = "loginVC_enter_password".localizable
+        textField.title = L10n.passwordTextFieldTitle
+        textField.placeholder = L10n.passwordTextFieldPlaceholder
         return textField
     }()
     
     private var viewModel: LoginViewModelProtocol
     
-    init(viewModel: LoginViewModelProtocol) {
+    init(viewModel: LoginViewModelProtocol,
+         keyboardAnimator: LoginKeyboardAnimatorUseCase) {
         self.viewModel = viewModel
+        self.keyboardAnimator = keyboardAnimator
+        
         super.init(nibName: nil, bundle: nil)
         
         bind()
@@ -74,6 +99,7 @@ final class LoginVC: UIViewController {
     }
     
     private func bind() {
+        
         viewModel.catchEmailError = { errorText in
             self.emailTextField.errorText = errorText
         }
@@ -81,6 +107,13 @@ final class LoginVC: UIViewController {
         viewModel.catchPasswordError = {
             self.passwordTextField.errorText = $0
         }
+        
+        viewModel.keyboardChangedFrame = {
+            self.keyboardAnimator.moveView(for: self.infoView,
+                                           frame: $0,
+                                           padding: 36.0)
+        }
+        
     }
     
     private func setupUI() {

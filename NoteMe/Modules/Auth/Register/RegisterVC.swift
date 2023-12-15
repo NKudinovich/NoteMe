@@ -17,6 +17,19 @@ import SnapKit
 
 final class RegisterVC: UIViewController {
     
+    //Keys with localization
+    private enum L10n {
+        static let registerTitleLable: String = "registerVC_register_title".localizable
+        static let emailTextFieldTitle: String = "registerVC_email".localizable
+        static let emailTextFieldPlaceholder: String = "registerVC_enter_email".localizable
+        static let passwordTextFieldTitle: String = "registerVC_password".localizable
+        static let passwordTextFieldPlaceholder: String = "registerVC_enter_password".localizable
+        static let repeatTextFieldTitle: String = "registerVC_password".localizable
+        static let repeatTextFieldPlaceholder: String = "registerVC_enter_password".localizable
+        static let registerButton: String = "registerVC_register_btn".localizable
+        static let haveAccountButton: String = "registerVC_have_account_btn".localizable
+    }
+    
     private lazy var contentView: UIView = .contentView()
     
     private lazy var logoContainer: UIView = UIView()
@@ -24,34 +37,34 @@ final class RegisterVC: UIViewController {
         UIImageView(image: .General.logo)
     
     private lazy var registerTitleLabel: UILabel =
-        .mainTitleLabel("registerVC_register_title".localizable)
+        .mainTitleLabel(L10n.registerTitleLable)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
 
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "registerVC_email".localizable
-        textField.placeholder = "registerVC_enter_email".localizable
+        textField.title = L10n.emailTextFieldTitle
+        textField.placeholder = L10n.emailTextFieldPlaceholder
         return textField
     }()
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "registerVC_password".localizable
-        textField.placeholder = "registerVC_enter_password".localizable
+        textField.title = L10n.repeatTextFieldTitle
+        textField.placeholder = L10n.repeatTextFieldPlaceholder
         return textField
     }()
     private lazy var repeatPasswordTextField: LineTextField = {
        let textField = LineTextField()
-        textField.title = "registerVC_repeat_password".localizable
-        textField.placeholder = "registerVC_enter_password".localizable
+        textField.title = L10n.passwordTextFieldTitle
+        textField.placeholder = L10n.passwordTextFieldPlaceholder
         return textField
     }()
     
     private lazy var registerButton: UIButton =
-        .yellowRoundedButton("registerVC_register_btn".localizable)
+        .yellowRoundedButton(L10n.registerButton)
         .withAction(self, #selector(registerDidTap))
     private lazy var haveAccButton: UIButton =
-        .underlineYellowButton("registerVC_have_account_btn".localizable)
+        .underlineYellowButton(L10n.haveAccountButton)
         .withAction(presenter, #selector(RegisterPresenterProtocol.haveAccountDidTap))
     
     private var presenter: RegisterPresenterProtocol

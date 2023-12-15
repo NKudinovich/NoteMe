@@ -32,7 +32,7 @@
 "registerVC_have_account_btn" = "У меня есть Аккаунт";
 "registerVC_wrong_email" = "Неправильный адрес электронной почты";
 "registerVC_nonvalid_password" = "Недействительный пароль";
-"registerVC_password_missmatch" = "Пароли не совпадают";
+"registerVC_password_mismatch" = "Пароли не совпадают";
 
 //MARK: - ResetVC keys
 "resetVC_reset_title" = "Сбросить Пароль";

@@ -14,7 +14,7 @@ extension NSAttributedString {
         let fontSize = font.pointSize
         
         if
-            let data = "<span style =\"font-family: '-apple-system', '\(fontfamilyName)'; font-size: \(fontSize)\">\(html)</span>"
+            let data = "<span style =\"font-family: '-apple-system', '\(fontfamilyName)'; font-size: \(fontSize); margin-left: 8px\">\(html)</span>"
                 .data(using: .utf16) {
             return try? NSAttributedString(
                 data: data,

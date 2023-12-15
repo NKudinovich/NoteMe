@@ -32,7 +32,7 @@
 "registerVC_have_account_btn" = "I have an Account";
 "registerVC_wrong_email" = "Wrong e-mail";
 "registerVC_nonvalid_password" = "Non-valid password";
-"registerVC_password_missmatch" = "Passwords do not match";
+"registerVC_password_mismatch" = "Passwords do not match";
 
 //MARK: - ResetVC keys
 "resetVC_reset_title" = "Reset Password";

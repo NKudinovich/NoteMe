@@ -21,20 +21,53 @@ protocol ResetAuthServiceUseCase {
                completion: @escaping (Bool) -> Void)
 }
 
+protocol ResetAlertServiceUseCase {
+    func showAlert(title: String, message: String, okTitle: String)
+}
+
+protocol ResetKeyboardHelperUseCase {
+    @discardableResult
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+      
+    @discardableResult
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
+}
+
 final class ResetVM: ResetViewModelProtocol {
     var catchEmailError: ((String?) -> Void)?
+    var keyboardFrameChanged: ((CGRect) -> Void)?
+    
+    //Keys with localization
+    private enum L10n {
+        static let wrongEmail: String = "resetVC_wrong_email".localizable
+    }
     
     private let inputValidator: ResetInputValidatorUseCase
     private let authService: ResetAuthServiceUseCase
+    private let alertService: ResetAlertServiceUseCase
+    private let keyboardHelper: ResetKeyboardHelperUseCase
     
     private weak var coordinator: ResetCoordinatorProtocol?
     
     init(coordinator: ResetCoordinatorProtocol,
          inputValidator: ResetInputValidatorUseCase,
-         authService: ResetAuthServiceUseCase) {
+         authService: ResetAuthServiceUseCase,
+         alertService: ResetAlertServiceUseCase,
+         keyboardHelper: ResetKeyboardHelperUseCase) {
         self.coordinator = coordinator
         self.inputValidator = inputValidator
         self.authService = authService
+        self.alertService = alertService
+        self.keyboardHelper = keyboardHelper
+    }
+    
+    func bind() {
+        keyboardHelper
+            .onWillShow { [weak self] in
+                self?.keyboardFrameChanged?($0)
+            }.onWillHide { [weak self] in
+                self?.keyboardFrameChanged?($0)
+            }
     }
     
     func resetDidTap(email: String?) {
@@ -45,13 +78,11 @@ final class ResetVM: ResetViewModelProtocol {
         authService.reset(email: email) { [weak coordinator] isSucces in
             print(isSucces)
             if isSucces {
-                print("reset done")
                 coordinator?.finish()
             } else {
-                let alertVC = AlertBuilder.build(title: "Error",
-                                                 message: "Some error",
-                                                 okTitle: "Ok")
-                coordinator?.showAlert(alertVC)
+                self.alertService.showAlert(title: "Error",
+                                       message: "Some error",
+                                       okTitle: "ok")
             }
         }
     }
@@ -62,7 +93,7 @@ final class ResetVM: ResetViewModelProtocol {
     
     private func checkValidation(email: String?) -> Bool {
         let isEmailValid = inputValidator.validate(email: email)
-        catchEmailError?(isEmailValid ? nil : "resetVC_wrong_email".localizable)
+        catchEmailError?(isEmailValid ? nil : L10n.wrongEmail)
         
         return isEmailValid
     }

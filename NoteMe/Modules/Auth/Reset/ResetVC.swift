@@ -10,12 +10,29 @@ import SnapKit
 
 @objc protocol ResetViewModelProtocol: AnyObject {
     var catchEmailError: ((String?) -> Void)? { get set }
+    var keyboardFrameChanged: ((CGRect) -> Void)? { get set }
     
     func resetDidTap(email: String?)
     @objc func cancelDidTap()
 }
 
+protocol ResetKeyboardAnimatorUseCase {
+    func moveView(for targetView: UIView,
+                  frame: CGRect,
+                  padding: CGFloat)
+}
+
 final class ResetVC: UIViewController {
+    
+    //Keys with localization
+    private enum L10n {
+        static let resetTitleLabel: String = "resetVC_reset_title".localizable
+        static let infoText: String = "resetVC_reset_info_text".localizable
+        static let emailTextFieldPlaceholder: String = "resetVC_enter_email".localizable
+        static let resetButton: String = "resetVC_reset_btn".localizable
+    }
+    
+    private let keyboardAnimator: ResetKeyboardAnimatorUseCase
     
     private lazy var contentView: UIView = .contentView()
     
@@ -23,21 +40,21 @@ final class ResetVC: UIViewController {
     private lazy var logoImageView: UIImageView =
         UIImageView(image: .General.logo)
     
-    private lazy var resetPasswordTitle: UILabel = .mainTitleLabel("resetVC_reset_title".localizable)
+    private lazy var resetPasswordTitle: UILabel = .mainTitleLabel(L10n.resetTitleLabel)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     
     private lazy var infoViewText: UILabel =
-        .infoViewText("resetVC_reset_info_text".localizable)
+        .infoViewText(L10n.infoText)
     
     private lazy var resetPasswordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "resetVC_enter_email".localizable
+        textField.placeholder = L10n.emailTextFieldPlaceholder
         return textField
     }()
     
     private lazy var resetButton: UIButton =
-        .yellowRoundedButton("resetVC_reset_btn".localizable)
+        .yellowRoundedButton(L10n.resetButton)
         .withAction(self, #selector(resetDidTap))
     private lazy var cancelButton: UIButton =
         .appCancelButton()
@@ -45,8 +62,11 @@ final class ResetVC: UIViewController {
     
     private var viewModel: ResetViewModelProtocol
     
-    init(viewModel: ResetViewModelProtocol) {
+    init(viewModel: ResetViewModelProtocol,
+         keyboardAnimator: ResetKeyboardAnimatorUseCase) {
         self.viewModel = viewModel
+        self.keyboardAnimator = keyboardAnimator
+        
         super.init(nibName: nil, bundle: nil)
         
         bind()
@@ -66,6 +86,12 @@ final class ResetVC: UIViewController {
     private func bind() {
         viewModel.catchEmailError = { errorText in
             self.resetPasswordTextField.errorText = errorText
+        }
+        
+        viewModel.keyboardFrameChanged = {
+            self.keyboardAnimator.moveView(for: self.infoView,
+                                           frame: $0,
+                                           padding: 36.0)
         }
     }
     

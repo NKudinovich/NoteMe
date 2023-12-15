@@ -39,7 +39,18 @@ protocol RegisterAuthUseCase {
                   completion: @escaping (Bool) -> Void)
 }
 
+protocol RegisterAlertServiceUseCase {
+    func showAlert(title: String, message: String, okTitle: String)
+}
+
 final class RegisterPresenter: RegisterPresenterProtocol {
+    
+    //Keys with localization
+    private enum L10n {
+        static let wrongEmail: String = "registerVC_wrong_email".localizable
+        static let nonValidPassword: String = "registerVC_nonvalid_password".localizable
+        static let mismatchPasswords: String = "registerVC_password_mismatch".localizable
+    }
     
     weak var delegate: RegisterPresenterDelegate?
     
@@ -48,15 +59,18 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     private let authService: RegisterAuthUseCase
+    private let alertService: RegisterAlertServiceUseCase
     
     init(coordinator: RegisterCoordinatorProtocol,
          keyboardHelper: RegisterKeyboardHelperUseCase,
          inputValidator: RegisterInputValidatorUseCase,
-         authService: RegisterAuthUseCase) {
+         authService: RegisterAuthUseCase,
+         alertService: RegisterAlertServiceUseCase) {
         self.coordinator = coordinator
         self.keyboardHelper = keyboardHelper
         self.inputValidator = inputValidator
         self.authService = authService
+        self.alertService = alertService
         
         bind()
     }
@@ -83,11 +97,9 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             if isSucces {
                 coordinator?.finish()
             } else {
-                //This alert show when email already used
-                let alertVC = AlertBuilder.build(title: "Error",
-                                                 message: "Some Error",
-                                                 okTitle: "Ok")
-                coordinator?.showAlert(alertVC)
+                self.alertService.showAlert(title: "Error",
+                                       message: "Some error",
+                                       okTitle: "ok")
             }
         }
     }
@@ -101,9 +113,9 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         let isPasswordValid = inputValidator.validate(password: password)
         
         delegate?.setEmailError(error: isEmailValid ?
-                                nil : "registerVC_wrong_email".localizable)
+                                nil : L10n.wrongEmail)
         delegate?.setPasswordError(error: isPasswordValid ?
-                                nil : "registerVC_nonvalid_password".localizable)
+                                nil : L10n.nonValidPassword)
         
         return isEmailValid && isPasswordValid
     }
@@ -113,7 +125,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             let password = password
             let repeatPassword = repeatPassword
         delegate?.setRepeatPasswordError(error: password == repeatPassword ?
-                                         nil : "registerVC_password_missmatch".localizable)
+                                         nil : L10n.mismatchPasswords)
         return password == repeatPassword
     }
 }

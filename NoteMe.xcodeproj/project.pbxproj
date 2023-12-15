@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0CEE982AF2C51200AC4DA1 /* UILabel+Styles.swift */; };
+		FB2271E62B28C1E40071AD9B /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271E52B28C1E40071AD9B /* AlertService.swift */; };
+		FB2271E82B28C9500071AD9B /* AlertService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271E72B28C9500071AD9B /* AlertService+Login.swift */; };
+		FB2271EC2B28D0C70071AD9B /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271EB2B28D0C70071AD9B /* MainTabBarVC.swift */; };
+		FB2271EE2B28D1090071AD9B /* MainTabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271ED2B28D1090071AD9B /* MainTabBarAssembler.swift */; };
+		FB2271F02B28D1A30071AD9B /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271EF2B28D1A30071AD9B /* MainTabBarCoordinator.swift */; };
+		FB2271F42B28D2E30071AD9B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271F32B28D2E30071AD9B /* HomeVC.swift */; };
+		FB2271F62B28D3030071AD9B /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271F52B28D3030071AD9B /* HomeAssembler.swift */; };
+		FB2271F82B28D3410071AD9B /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271F72B28D3410071AD9B /* HomeCoordinator.swift */; };
+		FB2271FC2B29E6980071AD9B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271FB2B29E6980071AD9B /* ProfileVC.swift */; };
+		FB2271FE2B29E7790071AD9B /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271FD2B29E7790071AD9B /* ProfileAssembler.swift */; };
+		FB2272002B29E7D00071AD9B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271FF2B29E7D00071AD9B /* ProfileCoordinator.swift */; };
+		FB2272032B29E9A20071AD9B /* KeyboardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2272022B29E9A20071AD9B /* KeyboardAnimator.swift */; };
 		FB43CC1C2AF16EC30018DA6B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */; };
 		FB627D042B1392E900F37995 /* ResetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB627D032B1392E900F37995 /* ResetCoordinator.swift */; };
 		FB769E3C2B273EA700565232 /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB769E3B2B273EA700565232 /* NSAttributedString+HTML.swift */; };
@@ -26,7 +38,6 @@
 		FB9BF17E2B1F887A000ADCBC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FB9BF17D2B1F887A000ADCBC /* FirebaseCrashlytics */; };
 		FB9BF1812B1F95D1000ADCBC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BF1802B1F95D1000ADCBC /* AuthService.swift */; };
 		FB9BF1832B1F9757000ADCBC /* AuthService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BF1822B1F9757000ADCBC /* AuthService+Login.swift */; };
-		FB9BF1862B1F98EF000ADCBC /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BF1852B1F98EF000ADCBC /* AlertBuilder.swift */; };
 		FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */; };
 		FBACC9972AE8250D00AD25F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */; };
 		FBACC99E2AE8251000AD25F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBACC99D2AE8251000AD25F5 /* Assets.xcassets */; };
@@ -38,6 +49,12 @@
 		FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACC9B72AE83DDE00AD25F5 /* LoginVC.swift */; };
 		FBBC90662AF53ABC00E17C96 /* String+Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC90652AF53ABC00E17C96 /* String+Locale.swift */; };
 		FBBC90692AF543EA00E17C96 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBBC906B2AF543EA00E17C96 /* Localizable.strings */; };
+		FBC53A0C2B2C83D600076229 /* KeyboardHelper+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC53A0B2B2C83D600076229 /* KeyboardHelper+Login.swift */; };
+		FBC53A0E2B2C84E900076229 /* KeyboardAnimator+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC53A0D2B2C84E900076229 /* KeyboardAnimator+Login.swift */; };
+		FBC53A102B2C8CDB00076229 /* AlertService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC53A0F2B2C8CDB00076229 /* AlertService+Register.swift */; };
+		FBC53A122B2C8F9E00076229 /* AlertService+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC53A112B2C8F9E00076229 /* AlertService+Reset.swift */; };
+		FBC53A142B2C91CA00076229 /* KeyboardHelper+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC53A132B2C91CA00076229 /* KeyboardHelper+Reset.swift */; };
+		FBC53A162B2C930E00076229 /* KeyboardAnimator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC53A152B2C930E00076229 /* KeyboardAnimator+Reset.swift */; };
 		FBC54CF52B164B5A00BFB674 /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54CF42B164B5A00BFB674 /* ParametersHelper.swift */; };
 		FBC54CFA2B16546E00BFB674 /* OnboardFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54CF92B16546E00BFB674 /* OnboardFirstStepVC.swift */; };
 		FBC54CFC2B16567000BFB674 /* OnboardFirstStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54CFB2B16567000BFB674 /* OnboardFirstStepVM.swift */; };
@@ -70,6 +87,18 @@
 
 /* Begin PBXFileReference section */
 		FB0CEE982AF2C51200AC4DA1 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
+		FB2271E52B28C1E40071AD9B /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		FB2271E72B28C9500071AD9B /* AlertService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Login.swift"; sourceTree = "<group>"; };
+		FB2271EB2B28D0C70071AD9B /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		FB2271ED2B28D1090071AD9B /* MainTabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarAssembler.swift; sourceTree = "<group>"; };
+		FB2271EF2B28D1A30071AD9B /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		FB2271F32B28D2E30071AD9B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		FB2271F52B28D3030071AD9B /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
+		FB2271F72B28D3410071AD9B /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		FB2271FB2B29E6980071AD9B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		FB2271FD2B29E7790071AD9B /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
+		FB2271FF2B29E7D00071AD9B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		FB2272022B29E9A20071AD9B /* KeyboardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimator.swift; sourceTree = "<group>"; };
 		FB43CC1B2AF16EC30018DA6B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		FB627D032B1392E900F37995 /* ResetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCoordinator.swift; sourceTree = "<group>"; };
 		FB769E3B2B273EA700565232 /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
@@ -81,7 +110,6 @@
 		FB9BF16E2B1F8485000ADCBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB9BF1802B1F95D1000ADCBC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		FB9BF1822B1F9757000ADCBC /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
-		FB9BF1852B1F98EF000ADCBC /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		FBACC9912AE8250D00AD25F5 /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBACC9942AE8250D00AD25F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBACC9962AE8250D00AD25F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +124,12 @@
 		FBBC906A2AF543EA00E17C96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FBBC906C2AF5440900E17C96 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FBBC906D2AF5440900E17C96 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FBC53A0B2B2C83D600076229 /* KeyboardHelper+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Login.swift"; sourceTree = "<group>"; };
+		FBC53A0D2B2C84E900076229 /* KeyboardAnimator+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimator+Login.swift"; sourceTree = "<group>"; };
+		FBC53A0F2B2C8CDB00076229 /* AlertService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Register.swift"; sourceTree = "<group>"; };
+		FBC53A112B2C8F9E00076229 /* AlertService+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Reset.swift"; sourceTree = "<group>"; };
+		FBC53A132B2C91CA00076229 /* KeyboardHelper+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Reset.swift"; sourceTree = "<group>"; };
+		FBC53A152B2C930E00076229 /* KeyboardAnimator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimator+Reset.swift"; sourceTree = "<group>"; };
 		FBC54CF42B164B5A00BFB674 /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
 		FBC54CF92B16546E00BFB674 /* OnboardFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVC.swift; sourceTree = "<group>"; };
 		FBC54CFB2B16567000BFB674 /* OnboardFirstStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVM.swift; sourceTree = "<group>"; };
@@ -145,6 +179,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB2271E92B28D0950071AD9B /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				FB2271EA2B28D0A30071AD9B /* Coordinator */,
+				FB2271EB2B28D0C70071AD9B /* MainTabBarVC.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		FB2271EA2B28D0A30071AD9B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FB2271ED2B28D1090071AD9B /* MainTabBarAssembler.swift */,
+				FB2271EF2B28D1A30071AD9B /* MainTabBarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FB2271F12B28D2BA0071AD9B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FB2271F22B28D2C50071AD9B /* Coordinator */,
+				FB2271F32B28D2E30071AD9B /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FB2271F22B28D2C50071AD9B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FB2271F52B28D3030071AD9B /* HomeAssembler.swift */,
+				FB2271F72B28D3410071AD9B /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FB2271F92B29E6850071AD9B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FB2271FA2B29E68A0071AD9B /* Coordinator */,
+				FB2271FB2B29E6980071AD9B /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FB2271FA2B29E68A0071AD9B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FB2271FD2B29E7790071AD9B /* ProfileAssembler.swift */,
+				FB2271FF2B29E7D00071AD9B /* ProfileCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		FB43CC1A2AF16EA50018DA6B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +250,13 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		FB7775A62B03E50C004B3479 /* KeyboardHelper */ = {
+		FB7775A62B03E50C004B3479 /* KeyboardServices */ = {
 			isa = PBXGroup;
 			children = (
 				FB7775A72B03E529004B3479 /* KeyboardHelper.swift */,
+				FB2272022B29E9A20071AD9B /* KeyboardAnimator.swift */,
 			);
-			path = KeyboardHelper;
+			path = KeyboardServices;
 			sourceTree = "<group>";
 		};
 		FB9B435D2AF15EC30079C5D0 /* Utils */ = {
@@ -202,7 +291,7 @@
 		FB9BF1842B1F98D2000ADCBC /* AlertBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				FB9BF1852B1F98EF000ADCBC /* AlertBuilder.swift */,
+				FB2271E52B28C1E40071AD9B /* AlertService.swift */,
 			);
 			path = AlertBuilder;
 			sourceTree = "<group>";
@@ -273,6 +362,9 @@
 		FBACC9B42AE83D7700AD25F5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FB2271F92B29E6850071AD9B /* Profile */,
+				FB2271F12B28D2BA0071AD9B /* Home */,
+				FB2271E92B28D0950071AD9B /* Tabbar */,
 				FBACC9B52AE83DA900AD25F5 /* Auth */,
 				FBC54CF62B16541300BFB674 /* Onboarding */,
 			);
@@ -362,7 +454,7 @@
 				FB9BF17F2B1F95B5000ADCBC /* AuthService */,
 				FBCCFFCE2B0D128F00A9B367 /* Coordinator */,
 				FBC6FB812AFEA16100796BC0 /* InputValidator */,
-				FB7775A62B03E50C004B3479 /* KeyboardHelper */,
+				FB7775A62B03E50C004B3479 /* KeyboardServices */,
 				FBC54CF32B164B4600BFB674 /* ParametersHelper */,
 			);
 			path = Services;
@@ -381,6 +473,9 @@
 			children = (
 				FBC6FB852AFEA81300796BC0 /* InputValidator+Login.swift */,
 				FB9BF1822B1F9757000ADCBC /* AuthService+Login.swift */,
+				FB2271E72B28C9500071AD9B /* AlertService+Login.swift */,
+				FBC53A0B2B2C83D600076229 /* KeyboardHelper+Login.swift */,
+				FBC53A0D2B2C84E900076229 /* KeyboardAnimator+Login.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -390,6 +485,9 @@
 			children = (
 				FBCCFFC32B0A267700A9B367 /* InputValidator+Reset.swift */,
 				FBD344E82B21FD3700F124D3 /* AuthService+Reset.swift */,
+				FBC53A112B2C8F9E00076229 /* AlertService+Reset.swift */,
+				FBC53A132B2C91CA00076229 /* KeyboardHelper+Reset.swift */,
+				FBC53A152B2C930E00076229 /* KeyboardAnimator+Reset.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -400,6 +498,7 @@
 				FBCCFFC82B0A2F5600A9B367 /* InputValidator+Register.swift */,
 				FBCCFFCA2B0D0DA200A9B367 /* KeyboardHelper+Register.swift */,
 				FBD344E62B21F79C00F124D3 /* AuthService+Register.swift */,
+				FBC53A0F2B2C8CDB00076229 /* AlertService+Register.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -539,15 +638,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC53A0E2B2C84E900076229 /* KeyboardAnimator+Login.swift in Sources */,
 				FBACC9B02AE8382A00AD25F5 /* UIImage+Consts.swift in Sources */,
 				FBC54CFE2B16572600BFB674 /* OnboardFirstStepAssembler.swift in Sources */,
 				FB43CC1C2AF16EC30018DA6B /* LineTextField.swift in Sources */,
+				FB2271FC2B29E6980071AD9B /* ProfileVC.swift in Sources */,
+				FB2271F42B28D2E30071AD9B /* HomeVC.swift in Sources */,
+				FB2271EE2B28D1090071AD9B /* MainTabBarAssembler.swift in Sources */,
+				FB2271F82B28D3410071AD9B /* HomeCoordinator.swift in Sources */,
 				FBD344E72B21F79C00F124D3 /* AuthService+Register.swift in Sources */,
 				FBC6FB862AFEA81300796BC0 /* InputValidator+Login.swift in Sources */,
 				FBC54D082B165D2500BFB674 /* OnboardSecondStepAssembler.swift in Sources */,
+				FB2271FE2B29E7790071AD9B /* ProfileAssembler.swift in Sources */,
 				FBD2E17D2AF3A20500415B82 /* UIView+Styles.swift in Sources */,
 				FBACC9AE2AE834E000AD25F5 /* UIFont+Consts.swift in Sources */,
+				FBC53A0C2B2C83D600076229 /* KeyboardHelper+Login.swift in Sources */,
+				FB2272002B29E7D00071AD9B /* ProfileCoordinator.swift in Sources */,
 				FBC54CF52B164B5A00BFB674 /* ParametersHelper.swift in Sources */,
+				FBC53A162B2C930E00076229 /* KeyboardAnimator+Reset.swift in Sources */,
 				FBC6FB7D2AFE978000796BC0 /* LoginVM.swift in Sources */,
 				FB7775A52B03E11C004B3479 /* RegisterAssembler.swift in Sources */,
 				FBACC9B82AE83DDE00AD25F5 /* LoginVC.swift in Sources */,
@@ -555,18 +663,24 @@
 				FBCCFFC42B0A267700A9B367 /* InputValidator+Reset.swift in Sources */,
 				FBC54D0A2B165DAA00BFB674 /* OnboardSecondStepCoordinator.swift in Sources */,
 				FBD2E1832AF3ECC600415B82 /* ResetVC.swift in Sources */,
+				FB2271F02B28D1A30071AD9B /* MainTabBarCoordinator.swift in Sources */,
 				FB9B43622AF160310079C5D0 /* UIButton+Styles.swift in Sources */,
-				FB9BF1862B1F98EF000ADCBC /* AlertBuilder.swift in Sources */,
 				FBCCFFD32B0D1B6C00A9B367 /* LoginCoordinator.swift in Sources */,
 				FBCCFFC92B0A2F5600A9B367 /* InputValidator+Register.swift in Sources */,
+				FBC53A102B2C8CDB00076229 /* AlertService+Register.swift in Sources */,
 				FBC54CFA2B16546E00BFB674 /* OnboardFirstStepVC.swift in Sources */,
 				FBC6FB7B2AFE942C00796BC0 /* UIButton+Actions.swift in Sources */,
+				FB2271F62B28D3030071AD9B /* HomeAssembler.swift in Sources */,
 				FBACC9952AE8250D00AD25F5 /* AppDelegate.swift in Sources */,
 				FBBC90662AF53ABC00E17C96 /* String+Locale.swift in Sources */,
 				FBCCFFC62B0A27DB00A9B367 /* ResetAssembler.swift in Sources */,
 				FBD344E92B21FD3700F124D3 /* AuthService+Reset.swift in Sources */,
 				FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */,
+				FB2272032B29E9A20071AD9B /* KeyboardAnimator.swift in Sources */,
+				FB2271E82B28C9500071AD9B /* AlertService+Login.swift in Sources */,
+				FBC53A142B2C91CA00076229 /* KeyboardHelper+Reset.swift in Sources */,
 				FBCCFFD02B0D129C00A9B367 /* Coordinator.swift in Sources */,
+				FBC53A122B2C8F9E00076229 /* AlertService+Reset.swift in Sources */,
 				FBCCFFCB2B0D0DA200A9B367 /* KeyboardHelper+Register.swift in Sources */,
 				FBCCFFC12B0A235200A9B367 /* ResetVM.swift in Sources */,
 				FB9BF1812B1F95D1000ADCBC /* AuthService.swift in Sources */,
@@ -575,6 +689,7 @@
 				FBC6FB832AFEA1BC00796BC0 /* InputValidator.swift in Sources */,
 				FBCCFFD62B0D24BC00A9B367 /* RegisterCoordinator.swift in Sources */,
 				FBC54D002B1657D600BFB674 /* OnboardFirstStepCoordinator.swift in Sources */,
+				FB2271E62B28C1E40071AD9B /* AlertService.swift in Sources */,
 				FB7775A82B03E529004B3479 /* KeyboardHelper.swift in Sources */,
 				FB7775A32B03DB88004B3479 /* RegisterPresenter.swift in Sources */,
 				FBC54D052B165C2700BFB674 /* OnboardSecondStepVM.swift in Sources */,
@@ -585,6 +700,7 @@
 				FBD2E1802AF3AB8200415B82 /* RegisterVC.swift in Sources */,
 				FB627D042B1392E900F37995 /* ResetCoordinator.swift in Sources */,
 				FB9B435F2AF15F4D0079C5D0 /* View+Layer.swift in Sources */,
+				FB2271EC2B28D0C70071AD9B /* MainTabBarVC.swift in Sources */,
 				FBACC9972AE8250D00AD25F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,35 +15,48 @@ import SnapKit
 
 final class OnboardSecondStepVC: UIViewController {
     
+    //Keys with localization
+    private enum L10n {
+        static let mainTitleLabel: String = "onboardSecondVC_main_title".localizable
+        static let infoViewTitle: String = "onboardSecondVC_infoView_text_title".localizable
+        static let infoViewCalendar: String = "onboardSecondVC_infoView_text_calendar".localizable
+        static let infoViewLocation: String = "onboardSecondVC_infoView_text_location".localizable
+        static let infoViewTimer: String = "onboardSecondVC_infoView_text_timer".localizable
+        static let listCalendar: String = "onboardSecondVC_list_calendar".localizable
+        static let listLocation: String = "onboardSecondVC_list_location".localizable
+        static let listTimer: String = "onboardSecondVC_list_timer".localizable
+        static let doneButton: String = "onboardSecondVC_done_button".localizable
+    }
+    
     private lazy var contentView: UIView = .contentView()
     
     private lazy var logoContainer: UIView = UIView()
     private lazy var logoImageView: UIImageView = UIImageView(image: .General.logo)
     
     private lazy var secondOnboardTitleLabel: UILabel =
-        .mainTitleLabel("onboardSecondVC_main_title".localizable)
+        .mainTitleLabel(L10n.mainTitleLabel)
     
     private lazy var infoView: UIView = .roundedViewWithShadow()
     private lazy var infoViewText: UILabel =
-        .infoViewText("onboardSecondVC_infoView_text_title".localizable)
+        .infoViewText(L10n.infoViewTitle)
     private lazy var infoViewTextCalendar: UILabel =
-        .textWithHTML("onboardSecondVC_infoView_text_calendar".localizable)
+        .textWithHTML(L10n.infoViewCalendar)
     private lazy var infoViewTextLocation: UILabel =
-        .textWithHTML("onboardSecondVC_infoView_text_location".localizable)
+        .textWithHTML(L10n.infoViewLocation)
     private lazy var infoViewTextTimer: UILabel =
-        .textWithHTML("onboardSecondVC_infoView_text_timer".localizable)
+        .textWithHTML(L10n.infoViewTimer)
     
     private lazy var listContainer: UIView = UIView()
     private lazy var listImageView: UIImageView = UIImageView(image: .Onboarding.onboardingList)
     private lazy var listCalendarLabelText: UILabel =
-        .listOnboardLabel("onboardSecondVC_list_calendar".localizable)
+        .listOnboardLabel(L10n.listCalendar)
     private lazy var listLocationLabelText: UILabel =
-        .listOnboardLabel("onboardSecondVC_list_location".localizable)
+        .listOnboardLabel(L10n.infoViewLocation)
     private lazy var listTimerLabelText: UILabel =
-        .listOnboardLabel("onboardSecondVC_list_timer".localizable)
+        .listOnboardLabel(L10n.infoViewTimer)
     
     private lazy var doneButton: UIButton =
-        .yellowRoundedButton("onboardSecondVC_done_button".localizable)
+        .yellowRoundedButton(L10n.doneButton)
         .withAction(viewModel, #selector(OnboardSecondStepViewModelProtocole.doneDidTap))
         
     private let viewModel: OnboardSecondStepViewModelProtocole
