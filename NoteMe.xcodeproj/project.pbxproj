@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB04F9C42B56E0CD001C14DD /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04F9C32B56E0CD001C14DD /* Container.swift */; };
+		FB04F9C62B56E54A001C14DD /* ContainerRegistrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04F9C52B56E54A001C14DD /* ContainerRegistrator.swift */; };
+		FB04F9C92B56EFFB001C14DD /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB04F9C82B56EFFB001C14DD /* WindowManager.swift */; };
 		FB0CEE992AF2C51200AC4DA1 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0CEE982AF2C51200AC4DA1 /* UILabel+Styles.swift */; };
 		FB2271E62B28C1E40071AD9B /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271E52B28C1E40071AD9B /* AlertService.swift */; };
 		FB2271E82B28C9500071AD9B /* AlertService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2271E72B28C9500071AD9B /* AlertService+Login.swift */; };
@@ -86,6 +89,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB04F9C32B56E0CD001C14DD /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		FB04F9C52B56E54A001C14DD /* ContainerRegistrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRegistrator.swift; sourceTree = "<group>"; };
+		FB04F9C82B56EFFB001C14DD /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		FB0CEE982AF2C51200AC4DA1 /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
 		FB2271E52B28C1E40071AD9B /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		FB2271E72B28C9500071AD9B /* AlertService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Login.swift"; sourceTree = "<group>"; };
@@ -179,6 +185,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB04F9C22B56E0BB001C14DD /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				FB04F9C32B56E0CD001C14DD /* Container.swift */,
+				FB04F9C52B56E54A001C14DD /* ContainerRegistrator.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		FB04F9C72B56EFEB001C14DD /* WindowManager */ = {
+			isa = PBXGroup;
+			children = (
+				FB04F9C82B56EFFB001C14DD /* WindowManager.swift */,
+			);
+			path = WindowManager;
+			sourceTree = "<group>";
+		};
 		FB2271E92B28D0950071AD9B /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +473,8 @@
 		FBC6FB802AFEA14D00796BC0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FB04F9C72B56EFEB001C14DD /* WindowManager */,
+				FB04F9C22B56E0BB001C14DD /* Container */,
 				FB9BF1842B1F98D2000ADCBC /* AlertBuilder */,
 				FB9BF17F2B1F95B5000ADCBC /* AuthService */,
 				FBCCFFCE2B0D128F00A9B367 /* Coordinator */,
@@ -640,10 +665,12 @@
 			files = (
 				FBC53A0E2B2C84E900076229 /* KeyboardAnimator+Login.swift in Sources */,
 				FBACC9B02AE8382A00AD25F5 /* UIImage+Consts.swift in Sources */,
+				FB04F9C92B56EFFB001C14DD /* WindowManager.swift in Sources */,
 				FBC54CFE2B16572600BFB674 /* OnboardFirstStepAssembler.swift in Sources */,
 				FB43CC1C2AF16EC30018DA6B /* LineTextField.swift in Sources */,
 				FB2271FC2B29E6980071AD9B /* ProfileVC.swift in Sources */,
 				FB2271F42B28D2E30071AD9B /* HomeVC.swift in Sources */,
+				FB04F9C62B56E54A001C14DD /* ContainerRegistrator.swift in Sources */,
 				FB2271EE2B28D1090071AD9B /* MainTabBarAssembler.swift in Sources */,
 				FB2271F82B28D3410071AD9B /* HomeCoordinator.swift in Sources */,
 				FBD344E72B21F79C00F124D3 /* AuthService+Register.swift in Sources */,
@@ -700,6 +727,7 @@
 				FBD2E1802AF3AB8200415B82 /* RegisterVC.swift in Sources */,
 				FB627D042B1392E900F37995 /* ResetCoordinator.swift in Sources */,
 				FB9B435F2AF15F4D0079C5D0 /* View+Layer.swift in Sources */,
+				FB04F9C42B56E0CD001C14DD /* Container.swift in Sources */,
 				FB2271EC2B28D0C70071AD9B /* MainTabBarVC.swift in Sources */,
 				FBACC9972AE8250D00AD25F5 /* SceneDelegate.swift in Sources */,
 			);

@@ -51,9 +51,9 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var listCalendarLabelText: UILabel =
         .listOnboardLabel(L10n.listCalendar)
     private lazy var listLocationLabelText: UILabel =
-        .listOnboardLabel(L10n.infoViewLocation)
+        .listOnboardLabel(L10n.listLocation)
     private lazy var listTimerLabelText: UILabel =
-        .listOnboardLabel(L10n.infoViewTimer)
+        .listOnboardLabel(L10n.listTimer)
     
     private lazy var doneButton: UIButton =
         .yellowRoundedButton(L10n.doneButton)
