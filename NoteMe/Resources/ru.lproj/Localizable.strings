@@ -56,5 +56,13 @@
 "onboardSecondVC_infoView_text_calendar" = "<b>· Календарь</b> - выберите дату, когда вы хотите получать уведомление.";
 "onboardSecondVC_infoView_text_location" = "<b>· Локация</b> - выберите местоположение, и уведомление придет после того, как вы войдете в его зону.";
 "onboardSecondVC_infoView_text_timer" = "<b>· Таймер</b> - установите таймер, и по истечении выбранного периода вы получите уведомление.";
+
+//MARK: - ProfileVC keys
+"profileVC_tableHeader_Account" = "Account";
+"profileVC_tableHeader_Settings" = "Settings";
+"profileVC_tableRow_Notifications" = "Notifications";
+"profileVC_tableRow_Export" = "Export";
+"profileVC_tableRow_Logout" = "Logout";
+
 //MARK: - Cancel Button
 "cancel_btn" = "Отмена";

@@ -14,11 +14,6 @@ extension UIView {
         set { layer.cornerRadius = newValue }
     }
     
-    func setBorder(width: CGFloat, color: UIColor) {
-        layer.borderWidth = width
-        layer.borderColor = color.cgColor
-    }
-    
     var shadowRadius: CGFloat {
         get { layer.shadowRadius }
         set { layer.shadowRadius = newValue }
@@ -42,5 +37,18 @@ extension UIView {
             return UIColor(cgColor: cgColor)
         }
         set { layer.shadowColor = newValue?.cgColor }
+    }
+    
+    func setBorder(width: CGFloat, color: UIColor) {
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
+    }
+    
+    func addShadow() {
+        self.layer.shadowColor = UIColor.appShadowBlack.cgColor
+        self.layer.shadowOffset = CGSize(width: 2, height: 4)
+        self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
     }
 }

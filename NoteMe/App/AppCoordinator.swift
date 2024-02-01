@@ -19,8 +19,8 @@ final class AppCoordinator: Coordinator {
     
     func startApp() {
         //FIX: - TESTCODE
-        openAuthModule()
-//        openMainApp()
+//        openAuthModule()
+        openMainApp()
 //        openOnboardingModule()
         
         
@@ -46,8 +46,6 @@ final class AppCoordinator: Coordinator {
         let window = windowManager.get(type: .main)
         window.rootViewController = vc
         windowManager.show(type: .main)
-//        window.rootViewController = vc
-//        window.makeKeyAndVisible()
     }
     
     private func openOnboardingModule() {
@@ -66,7 +64,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openMainApp() {
-        let coordinator = MainTabBarCoordinator()
+        let coordinator = MainTabBarCoordinator(container: container)
         children.append(coordinator)
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { $0 == coordinator }

@@ -37,6 +37,19 @@ final class AuthService {
         }
     }
     
+    func getCurrentUserName() -> String? {
+        firebase.currentUser?.email
+    }
+    
+    func logout(completion: @escaping ((Result<Void, Error>) -> Void)) {
+        do {
+            try firebase.signOut()
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
 }
 
 

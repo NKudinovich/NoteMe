@@ -57,5 +57,12 @@
 "onboardSecondVC_infoView_text_location" = "<b>· Location</b> - choose the region and notification will come after you enter it.";
 "onboardSecondVC_infoView_text_timer" = "<b>· Timer</b> - set timer and after selected period you will receive the notification.";
 
+//MARK: - ProfileVC keys
+"profileVC_tableHeader_Account" = "Account";
+"profileVC_tableHeader_Settings" = "Settings";
+"profileVC_tableRow_Notifications" = "Notifications";
+"profileVC_tableRow_Export" = "Export";
+"profileVC_tableRow_Logout" = "Logout";
+
 //MARK: - Cancel Button
 "cancel_btn" = "Cancel";
